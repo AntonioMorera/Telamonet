@@ -5,7 +5,7 @@ El proyecto está inspirado en plataformas como Instagram y Twitter, pero desarr
 
 Su objetivo principal es funcionar como un entorno realista donde practicar autenticación, feeds dinámicos, perfiles de usuario, publicación de contenido e interacción social basada en likes y comentarios.
 
-<img width="135" height="124" alt="Bucafeed_logo" src="https://github.com/user-attachments/assets/14caa934-07f0-4545-a50e-cce5fded67fc" />
+<img width="135" height="124" style="display: flex; justify-content: center;" alt="Bucafeed_logo" src="https://github.com/user-attachments/assets/14caa934-07f0-4545-a50e-cce5fded67fc" />
 
 ---
 
