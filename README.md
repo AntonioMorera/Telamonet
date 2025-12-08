@@ -1,4 +1,4 @@
-# 🟦 BucaFeed
+# 🌀 BucaFeed
 
 BucaFeed es una simulación de una red social moderna, creada con el propósito de aprender y dominar el stack full-JavaScript.  
 El proyecto está inspirado en plataformas como Instagram y Twitter, pero desarrollado a una escala pequeña, enfocada en la interacción entre amigos y familiares.
