@@ -12,7 +12,7 @@
         <FormNavBar></FormNavBar>
         <h1>{{ t("login.title") }}</h1>
         <div id="form-container">
-            <form>
+            <form method="post">
                 <label for="username-login-form" id="username-login-label">{{ t("login.username") }}</label>
                 <input type="text" class="input-form" maxlength="20" id="username-login-form" name="username-login-form" :placeholder="t('login.placeholderUsername')" required>
                 <label for="password-login-form" id="password-login-label">{{ t("login.password") }}</label>

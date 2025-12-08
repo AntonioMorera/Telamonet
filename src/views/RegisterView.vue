@@ -17,7 +17,7 @@
                 <img src="/src/assets/logo/Bucafeed_logo.png" alt="">
                 <p id="eslogan">{{ t("register.eslogan") }}</p>
             </div>
-            <form>
+            <form method="post">
                 <label for="username-register-form" id="username-register-label">{{ t("register.username") }}</label>
                 <input type="text" class="input-form" maxlength="20" id="username-register-form" name="username-register-form" :placeholder="t('register.placeholderUsername')" required>
                 <label for="password-register-form" id="password-register-label">{{ t("register.password") }}</label>
