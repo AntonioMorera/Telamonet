@@ -5,6 +5,8 @@ El proyecto está inspirado en plataformas como Instagram y Twitter, pero desarr
 
 Su objetivo principal es funcionar como un entorno realista donde practicar autenticación, feeds dinámicos, perfiles de usuario, publicación de contenido e interacción social basada en likes y comentarios.
 
+![Logo de BucaFeed](assets/logo/Bucafeed_logo.png)
+
 ---
 
 ## 🚀 Tecnologías utilizadas
