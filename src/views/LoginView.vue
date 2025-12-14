@@ -13,8 +13,8 @@
         <h1>{{ t("login.title") }}</h1>
         <div id="form-container">
             <form method="post">
-                <label for="username-login-form" id="username-login-label">{{ t("login.username") }}</label>
-                <input type="text" class="input-form" maxlength="20" id="username-login-form" name="username-login-form" :placeholder="t('login.placeholderUsername')" required>
+                <label for="username-login-form" id="username-login-label">{{ t("login.username") }} | {{ t("login.email") }}</label>
+                <input type="text" class="input-form" maxlength="50" id="username-login-form" name="username-login-form" :placeholder="t('login.placeholderUsername')" required>
                 <label for="password-login-form" id="password-login-label">{{ t("login.password") }}</label>
                 <input type="password" class="input-form" maxlength="20" id="password-login-form" name="password-login-form" :placeholder="t('login.placeholderPassword')" required>
                 <ButtonForm :value="t('login.submit')"></ButtonForm>
