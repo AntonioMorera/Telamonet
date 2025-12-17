@@ -16,6 +16,7 @@ const changeLanguage = (lang) => {
 const languageSelector = () => {
     showLanguages.value = !showLanguages.value
 }
+
 </script>
 
 <template>
