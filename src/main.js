@@ -3,6 +3,7 @@ import App from './App.vue'
 import i18n from './i18n'
 import router from './router'
 import '../src/sytles/style.css'
+import '../src/sytles/main.css'
 
 const app = createApp(App)
 

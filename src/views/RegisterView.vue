@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <main>
+    <main class="relative flex flex-col justify-center items-center min-h-screen bg-[rgb(168,79,79)]">
         <FormNavBar></FormNavBar>
         <h1>{{ t("register.title") }}</h1>
         <div id="form-container">
@@ -30,17 +30,6 @@
 </template>
 
 <style scoped>
-    main {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        /* background-color: rgb(126, 32, 32); */
-        background-color: rgb(168, 79, 79);
-    }
-
     h1 {
         font-size: 60px;
         margin-bottom: 70px;
