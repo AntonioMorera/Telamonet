@@ -9,7 +9,7 @@
 <template>
     <main class="relative flex flex-col justify-center items-center min-h-screen bg-[rgb(168,79,79)]">
         <FormNavBar></FormNavBar>
-        <h1 class="text-6xl mb-[70px] text-white [text-shadow:-3px_3px_1px_black]">{{ t.register.title }}</h1>
+        <h1 class="text-6xl mb-[70px] text-white [text-shadow:-3px_3px_1px_black]">{{ t.register.title }}hola</h1>
         <div class="flex justify-center items-center mb-[150px]" id="form-container">
             <div class="flex flex-col justify-center items-center h-[400px] w-[400px] p-[10px] text-white rounded-bl-xl rounded-tl-xl" id="side-panel">
                 <p class="text-center text-[30px] font-bold mb-[30px] [text-shadow:-2px_2px_1px_black]" id="welcome">{{ t.register.welcome }}</p>
