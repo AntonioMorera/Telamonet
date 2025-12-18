@@ -1,15 +1,15 @@
 <!--Componente de barra de navegacion-->
 <script setup>
 import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useTranslations } from '../composables/useTranslations'
 
-const { locale, t } = useI18n()
+const { t, locale, setLocale } = useTranslations()
 
 // Variable reactiva para controlar visibilidad
 const showLanguages = ref(false)
 
 const changeLanguage = (lang) => {
-    locale.value = lang
+    setLocale(lang)
     showLanguages.value = false // Ocultar después de seleccionar
 }
 
@@ -23,7 +23,7 @@ const languageSelector = () => {
     <nav>
         <div id="language-selector">
             <div @click="languageSelector" id="selector-text-svg">
-                <p>{{ t("nav.selectLanguage") }}</p>
+                <p>{{ t.nav.selectLanguage }}</p>
                 <svg width="20" height="20" viewBox="0 0 12 12"class="chevron":class="{ 'rotated': showLanguages }">
                     <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5"/>
                 </svg>

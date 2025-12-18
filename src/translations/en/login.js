@@ -1,14 +1,14 @@
-// translations/es/login.js
+// translations/en/login.js
 export const login = {
-    title: "INICIAR SESIÓN",
-    welcome: "Bienvenido de nuevo",
-    eslogan: "Inicia sesión para que puedas ver que hay nuevo",
-    username: "Usuario",
-    email: "Correo electrónico",
-    password: "Contraseña",
-    placeholderUsername: "Tu usuario / Tu correo electrónico",
-    placeholderPassword: "Tu contraseña",
-    submit: "Entrar",
-    noAccount: "¿Es tu primera vez aquí? Crea tu cuenta",
-    registerLink: "Regístrate"
+    title: "LOGIN",
+    welcome: "Welcome back",
+    eslogan: "Login to see what's new",
+    username: "Username",
+    email: "Email",
+    password: "Password",
+    placeholderUsername: "Your username / Your email",
+    placeholderPassword: "Your password",
+    submit: "Enter",
+    noAccount: "Your first time here? Create your account",
+    registerLink: "Register"
 };

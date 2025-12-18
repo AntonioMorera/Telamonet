@@ -1,10 +1,10 @@
-// translations/es/nav.js
+// translations/en/nav.js
 export const nav = {
-    home: "Inicio",
+    home: "Home",
     feed: "Feed",
-    profile: "Perfil",
-    login: "Iniciar Sesión",
-    register: "Registrarse",
-    logout: "Cerrar Sesión",
-    selectLanguage: "Selecciona tu idioma"
+    profile: "Profile",
+    login: "Login",
+    register: "Register",
+    logout: "Logout",
+    selectLanguage: "Select your language"
 };

@@ -1,9 +1,8 @@
-// translations/es/index.js
 import { nav } from './nav';
 import { register } from './register';
 import { login } from './login';
 
-export const es = {
+export const en = {
     nav,
     register,
     login
