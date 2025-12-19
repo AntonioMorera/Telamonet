@@ -1,7 +1,7 @@
 <!--Vista de formulario de registro-->
 <script setup>
     import FormNavBar from '../components/FormNavBar.vue';
-    import ButtonForm from '../components/ButtonForm.vue';
+    import ButtonForm from '../components/buttons/ButtonForm.vue';
     import { useTranslations } from '../composables/useTranslations'
     const { t } = useTranslations() //Variable para llamar al archivo de traduccion
 </script>
