@@ -1,5 +1,5 @@
 <script setup>
-import ButtonFollow from '../components/buttons/ButtonFollow.vue';
+import ButtonTemplate from '../components/buttons/ButtonTemplate.vue';
 import { useTranslations } from '../composables/useTranslations'
 
 const { t } = useTranslations()
@@ -17,6 +17,12 @@ const sugerencias = [
     nombre: 'Ayanokoji', 
     usuario: '@Ayanokoji', 
     avatar: 'https://i.pinimg.com/1200x/60/01/8c/60018ce13a38e6715f7ae873837bb05b.jpg' 
+  },
+    { 
+    id: 3, 
+    nombre: 'Mikaela', 
+    usuario: '@Mamaluigi',
+    avatar: 'https://static.vecteezy.com/system/resources/previews/024/983/914/non_2x/simple-user-default-icon-free-png.png'
   }
 ]
 
@@ -67,7 +73,7 @@ const tendencias = [
         
         
         <!-- Botón Seguir -->
-        <ButtonFollow :texto="t.sidebar.follow"></ButtonFollow>
+        <ButtonTemplate :texto="t.sidebar.follow"></ButtonTemplate>
       </div>
     </div>
 

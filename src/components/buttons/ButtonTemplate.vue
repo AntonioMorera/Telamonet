@@ -1,4 +1,4 @@
-<!-- ButtonFollow.vue -->
+
 <script setup>
 const props = defineProps({
   texto: {
