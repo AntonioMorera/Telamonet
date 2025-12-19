@@ -3,7 +3,7 @@
     import FormNavBar from '../components/FormNavBar.vue';
     import ButtonForm from '../components/ButtonForm.vue';
     import { useTranslations } from '../composables/useTranslations'
-    const { t } = useTranslations() //Variable para llamar al archivo de traduccion
+    const { t } = useTranslations() // Variable para llamar al archivo de traduccion
 </script>
 
 <template>

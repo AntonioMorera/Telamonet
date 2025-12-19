@@ -1,10 +1,13 @@
 // translations/es/nav.js
 export const nav = {
     home: "Inicio",
-    feed: "Feed",
+    trending: "Tendencias",
+    explore: "Explorar",
+    notification: "Notificaciones",
+    chat: "Mensajes",
     profile: "Perfil",
-    login: "Iniciar Sesión",
+    addAccount: "Añadir Cuenta",
     register: "Registrarse",
-    logout: "Cerrar Sesión",
-    selectLanguage: "Selecciona tu idioma"
+    login: "Iniciar Sesión",
+    logout: "Cerrar Sesión"
 };

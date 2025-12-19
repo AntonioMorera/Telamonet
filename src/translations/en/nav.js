@@ -1,10 +1,13 @@
 // translations/en/nav.js
 export const nav = {
     home: "Home",
-    feed: "Feed",
+    trending: "Trending",
+    explore: "Explore",
+    notification: "Notifications",
+    chat: "Mesagges",
     profile: "Profile",
-    login: "Login",
+    addAccount: "Add Account",
     register: "Register",
-    logout: "Logout",
-    selectLanguage: "Select your language"
+    login: "Login",
+    logout: "Logout"
 };
