@@ -1,7 +1,9 @@
 <script setup>
     import NavBar from '../components/NavBar.vue';
     import SearchBar from '../components/SearchBar.vue';
+    import SideBar from '../components/SideBar.vue';
     import { useTranslations } from '../composables/useTranslations'
+import { sidebar } from '../translations/es/sidebar';
     //const { t } = useTranslations() // Variable para llamar al archivo de traduccion
     
 </script>
@@ -16,10 +18,7 @@
             </div>
 
         </section>
-        <section>
-            <p>hola</p>
-
-        </section>
+        <SideBar></SideBar>
     </main>
 </template>
 
