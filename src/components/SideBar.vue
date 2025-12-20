@@ -46,7 +46,7 @@ const tendencias = [
         {{ t.sidebar.accountSuggestions }}
       </h3>
       
-      <div 
+      <div
         v-for="sugerencia in sugerencias" 
         :key="sugerencia.id" 
         class="flex items-center py-2 px-2 mr-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
