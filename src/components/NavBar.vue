@@ -5,10 +5,10 @@
 </script> 
 
 <template>
-    <nav>
+    <nav class="bg-gradient-to-b from-[#326465] to-[#1d2e3e]">
         <div class="flex flex-row items-center gap-3 mb-4">
-            <img class="w-[60px] h-[60px]" src="/src/assets/logo/telamon_logo.png" alt="">
-            <h1 class="font-bold text-[20px]">{{ t.nav.title }}<span>{{ t.nav.website }}</span></h1>
+            <img class="w-[70px] h-[70px]" src="/src/assets/logo/telamon_logo.png" alt="">
+            <h1 class="font-bold text-[20px] text-white">{{ t.nav.title }}<span class="text-[#a0c4d4]">{{ t.nav.website }}</span></h1>
         </div>
         <router-link class="link" to="/home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>{{ t.nav.home }}</router-link>
         <router-link class="link" to="/trending"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-flame"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 10.941c2.333 -3.308 .167 -7.823 -1 -8.941c0 3.395 -2.235 5.299 -3.667 6.706c-1.43 1.408 -2.333 3.621 -2.333 5.588c0 3.704 3.134 6.706 7 6.706s7 -3.002 7 -6.706c0 -1.712 -1.232 -4.403 -2.333 -5.588c-2.084 3.353 -3.257 3.353 -4.667 2.235" /></svg>{{ t.nav.trending }}</router-link>
@@ -25,14 +25,6 @@
 </template>
 
 <style scoped>
-    h1 {
-        color: rgb(38, 44, 160);
-    }
-
-    span {
-        color: black;
-    }
-
     nav {
         width: 300px;
         display: flex;
@@ -40,6 +32,7 @@
         margin-top: 20px;
         padding-left: 40px;
         min-height: 90vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
     .link {
@@ -47,39 +40,56 @@
         flex-direction: row;
         gap: 10px;
         margin-bottom: 20px;
-        font-size: 20px;
+        font-size: 17px;
         align-items: center;
-        padding: 5px 0px 5px 5px;
-        border-radius: 10px;
-        margin-right: 10px;
-        padding-left: 10px;
-        height: 60px;
+        padding: 12px 16px;
+        border-radius: 12px;
+        margin-right: 16px;
+        color: #a0c4d4;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-weight: 500;
     }
 
     .link:hover {
-        background-color: lightgray;
+        background-color: #2a4a5a;
+        color: white;
+    }
+
+    .link.router-link-active {
+        background-color: #2a4a5a;
+        color: white;
+        font-weight: 600;
     }
 
     #post {
         display: flex;
-        background-color: lightgray;
+        background-color: #2a4a5a;
         justify-content: center;
-        padding-right: 20px;
+        padding: 14px 20px;
         border-radius: 30px;
-        height: 50px;
+        color: white;
+        font-weight: 600;
+        margin-top: 8px;
+        margin-bottom: 24px;
     }
 
     #post:hover {
-        background-color: darkgray;
+        background-color: #3a5a6a;
+        color: white;
     }
 
     #profile {
         position: relative;
         margin-top: auto;
+        margin-bottom: 20px;
     }
 
     #dots {
         position: absolute;
-        right: 10px;
+        right: 16px;
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
     }
 </style>
