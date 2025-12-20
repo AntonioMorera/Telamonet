@@ -1,9 +1,8 @@
 <!--Componente de barra de navegacion-->
 <script setup>
     import { useTranslations } from '../composables/useTranslations'
-    const { t } = useTranslations() // Variable para llamar al archivo de traduccion
-
-</script>
+    const { t } = useTranslations() //Variable para llamar al archivo de traduccion
+</script> 
 
 <template>
     <nav>
