@@ -1,5 +1,6 @@
 <script setup>
     import NavBar from '../components/NavBar.vue';
+    import SearchBar from '../components/SearchBar.vue';
     import { useTranslations } from '../composables/useTranslations'
     //const { t } = useTranslations() // Variable para llamar al archivo de traduccion
     
@@ -9,9 +10,7 @@
     <main>
         <NavBar></NavBar>
         <section>
-            <div id="searchBar">
-                <p>hola</p>
-            </div>
+            <SearchBar></SearchBar>
             <div id="mainBody">
                 <p>hola</p>
             </div>
