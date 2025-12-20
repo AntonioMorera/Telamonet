@@ -5,7 +5,6 @@
     
     import { useTranslations } from '../composables/useTranslations'
     const { t } = useTranslations() // Variable para llamar al archivo de traduccion
-    
 </script>
 
 <template>
@@ -13,8 +12,8 @@
         <NavBar></NavBar>
         <section class="bg-[#15202b] text-white">
             <SearchBar></SearchBar>
-            <div id="mainBody" class="flex justify-center items-center">
-                <p class="text-[#8b98a5]">No hay publicaciones</p>
+            <div id="mainNotification">
+                <p>NOTIFICATION</p>
             </div>
 
         </section>

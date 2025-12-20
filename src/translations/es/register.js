@@ -1,8 +1,8 @@
 // translations/es/register.js
 export const register = {
     title: "CREAR CUENTA",
-    welcome: "Bienvenido a BucaFeed",
-    eslogan: "Registra tu cuenta para poder disfrutar de BucaFeed",
+    welcome: "Bienvenido a Telamo",
+    eslogan: "Registra tu cuenta para poder disfrutar de Telamo",
     username: "Usuario",
     email: "Correo electrónico",
     password: "Contraseña",

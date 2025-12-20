@@ -13,8 +13,8 @@
         <NavBar></NavBar>
         <section class="bg-[#15202b] text-white">
             <SearchBar></SearchBar>
-            <div id="mainBody" class="flex justify-center items-center">
-                <p class="text-[#8b98a5]">No hay publicaciones</p>
+            <div id="mainBody">
+                <p>POST</p>
             </div>
 
         </section>

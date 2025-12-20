@@ -59,8 +59,8 @@ const languageSelector = () => {
         border: 1px solid black;
         border-radius: 10px;
         overflow: hidden;
-        background: -webkit-linear-gradient(305deg, #1b1b1b,#ff3838,#1b1b1b);/* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(305deg, #1b1b1b,#ff3838,#1b1b1b);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: -webkit-linear-gradient(140deg, #326465,#1d2e3e);/* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(140deg, #326465,#1d2e3e);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
 
     #selector-text-svg {
@@ -69,7 +69,6 @@ const languageSelector = () => {
         align-items: center;
         padding: 5px;
         color: white;
-        font-weight: bold;
     }
 
     #selector-text-svg p {
@@ -100,8 +99,8 @@ const languageSelector = () => {
         overflow: hidden;
         transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
         padding: 0;
-        background: -webkit-linear-gradient(305deg, #292525,#b72727,#292525);/* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(305deg, #292525,#b72727,#292525);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: -webkit-linear-gradient(140deg, #326465,#1d2e3e);/* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(140deg, #326465,#1d2e3e);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
 
     #languages-buttons.show {

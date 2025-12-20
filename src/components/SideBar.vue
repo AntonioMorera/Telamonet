@@ -76,7 +76,7 @@ const tendencias = [
     </div>
 
     <!-- Separador -->
-    <hr class="border-none h-px bg-[#2a4a5a] my-5">
+    <hr class="border-none h-px bg-white my-5">
 
     <!-- Tendencias -->
     <div class="mb-5">
@@ -87,7 +87,7 @@ const tendencias = [
       <div 
         v-for="(tendencia, index) in tendencias" 
         :key="index" 
-        class="py-2 px-2 mr-2 border-b border-[#2a4a5a] last:border-none rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200 cursor-pointer"
+        class="py-2 px-2 mr-2 border-b border-[#4b7b94] last:border-none rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200 cursor-pointer"
       >
         <span class="block font-bold text-sm text-white mb-0.5">
           {{ tendencia.hashtag }}
@@ -103,7 +103,7 @@ const tendencias = [
     </div>
 
     <!-- Separador -->
-    <hr class="border-none h-px bg-[#2a4a5a] my-5">
+    <hr class="border-none h-px bg-white my-5">
 
     <!-- Videos -->
     <div class="mb-5">

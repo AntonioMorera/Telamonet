@@ -9,8 +9,8 @@ const { t } = useTranslations()
 
 // Datos de ejemplo
 const usuario = {
-   nombre: 'Yugi Kiyugi',
-   usuarioNombre: '@kukiyugi',
+   nombre: 'Jugi Quijugi',
+   usuarioNombre: '@jugiquijugi',
    seguidores: 100,
    siguiendo: 75,
    bannerUrl: 'https://www.retrones.net/sites/default/files/cabeceras/cabeceras_36.jpg',
