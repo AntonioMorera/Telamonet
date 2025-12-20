@@ -1,10 +1,16 @@
 // translations/en/nav.js
 export const nav = {
+    title: "Telamo",
+    website: "Net",
     home: "Home",
-    feed: "Feed",
+    trending: "Trending",
+    explore: "Explore",
+    notification: "Notifications",
+    chat: "Mesagges",
+    post: "Post",
     profile: "Profile",
-    login: "Login",
+    addAccount: "Add Account",
     register: "Register",
-    logout: "Logout",
-    selectLanguage: "Select your language"
+    login: "Login",
+    logout: "Logout"
 };
