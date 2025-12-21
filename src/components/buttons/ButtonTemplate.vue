@@ -27,9 +27,9 @@ const manejarClick = () => {
 .boton-unico {
   padding: 0.375rem 1rem;
   border-radius: 9999px;
-  border: 1px solid #60a5fa;
+  border: 1px solid white;
   background: transparent;
-  color: #60a5fa;
+  color: white;
   font-weight: 700;
   font-size: 0.75rem;
   flex-shrink: 0;
@@ -39,5 +39,7 @@ const manejarClick = () => {
 
 .boton-unico:hover {
   background-color: #eff6ff;
+  color: #60a5fa;
+  border: 1px solid #60a5fa;
 }
 </style>

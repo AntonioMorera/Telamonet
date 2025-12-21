@@ -12,7 +12,7 @@
         <h1 class="text-6xl mb-[70px] text-white [text-shadow:-3px_3px_1px_black]">{{ t.login.title }}</h1>
         <div class="flex justify-center items-center mb-[150px]" id="form-container">
             <form class="flex flex-col justify-center h-[400px] w-[400px] p-[10px] bg-white rounded-bl-xl rounded-tl-xl" method="post">
-                <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.login.username }} | {{ t.login.email }}</label>
+                <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.login.username }}</label>
                 <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.login.placeholderUsername" required>
                 <label for="password-register-form" id="password-register-label">{{ t.login.password }}</label>
                 <input type="password" class="input-form" maxlength="20" id="password-register-form" name="password-register-form" :placeholder="t.login.placeholderPassword" required>

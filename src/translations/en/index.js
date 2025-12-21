@@ -3,11 +3,13 @@ import { register } from './register';
 import { login } from './login';
 import { sidebar } from './sidebar';
 import { profile } from './profile';
+import { post } from './post';
 
 export const en = {
     nav,
     register,
     login,
     sidebar,
-    profile
+    profile,
+    post
 };

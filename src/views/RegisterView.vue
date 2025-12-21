@@ -17,7 +17,7 @@
                 <p class="text-center text-[20px] font-bold mt-[30px] [text-shadow:-2px_2px_1px_black]" id="eslogan">{{ t.register.eslogan }}</p>
             </div>
             <form class="flex flex-col justify-center h-[400px] w-[400px] p-[10px] bg-white rounded-br-xl rounded-tr-xl" method="post">
-                <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.register.username }} | {{ t.register.email }}</label>
+                <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.register.username }}</label>
                 <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderUsername" required>
                 <label for="password-register-form" id="password-register-label">{{ t.register.password }}</label>
                 <input type="password" class="input-form" maxlength="20" id="password-register-form" name="password-register-form" :placeholder="t.register.placeholderPassword" required>
