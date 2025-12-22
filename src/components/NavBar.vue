@@ -19,7 +19,7 @@
 <template>
     <nav class="bg-gradient-to-b from-[#326465] to-[#1d2e3e]">
         <div class="flex flex-row items-center gap-3 mb-4">
-            <img class="w-[70px] h-[70px]" src="/src/assets/logo/telamon_logo.png" alt="">
+            <img class="w-[70px] h-[70px]" src="/src/assets/logo/logoNavBar.png" alt="">
             <h1 class="font-bold text-[20px] text-white">{{ t.nav.title }}<span class="text-[#a0c4d4]">{{ t.nav.website }}</span></h1>
         </div>
         <router-link class="link" to="/home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>{{ t.nav.home }}</router-link>
