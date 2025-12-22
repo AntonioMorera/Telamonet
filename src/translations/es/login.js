@@ -2,7 +2,7 @@
 export const login = {
     title: "INICIAR SESIÓN",
     welcome: "Bienvenido de nuevo",
-    eslogan: "Inicia sesión para que puedas ver que hay nuevo",
+    eslogan: "Inicia sesión para ver que hay nuevo en TelamoNet",
     username: "Usuario",
     email: "Correo electrónico",
     password: "Contraseña",
