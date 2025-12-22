@@ -1,27 +1,26 @@
 import { createRouter, createWebHistory } from "vue-router";
-import FeedView from "../views/FeedView.vue";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import RegisterView from "../views/RegisterView.vue";
+import TrendingView from "../views/TrendingView.vue";
+import ExploreView from "../views/ExploreView.vue";
+import NotificationView from "../views/NotificationView.vue";
+import MesaggeView from "../views/MesaggeView.vue";
+import PostView from "../views/PostView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
-            path: '/',
-            name: 'register',
-            component: RegisterView
+          path: '/',
+          name: 'register',
+          component: RegisterView
         },
         {
-            path: '/feed',
-            name: 'feed',
-            component: FeedView
-        },
-        {
-            path: '/home',
-            name: 'home',
-            component: HomeView
+          path: '/home',
+          name: 'home',
+          component: HomeView
         },
         {
           path: '/login',
@@ -32,6 +31,31 @@ const router = createRouter({
           path: '/profile/:id?',
           name: 'profile',
           component: ProfileView
+        },
+        {
+          path: '/trending',
+          name: 'trending',
+          component: TrendingView
+        },
+        {
+          path: '/explore',
+          name: 'explore',
+          component: ExploreView
+        },
+        {
+          path: '/notification',
+          name: 'notification',
+          component: NotificationView
+        },
+        {
+          path: '/mesagge',
+          name: 'mesagge',
+          component: MesaggeView
+        },
+        {
+          path: '/post',
+          name: 'post',
+          component: PostView
         }
     ]
 })

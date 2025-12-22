@@ -12,5 +12,6 @@ export const nav = {
     addAccount: "Add Account",
     register: "Register",
     login: "Login",
-    logout: "Logout"
+    logout: "Logout",
+    selectLanguage: "Select your language"
 };

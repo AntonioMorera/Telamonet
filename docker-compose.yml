@@ -1,0 +1,45 @@
+services:
+  app:
+    build: .
+    container_name: telamonet_app
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - db
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+
+  db:
+    image: mysql:8.0.33
+    container_name: telamonet_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: telamonet
+      MYSQL_USER: telamo_user
+      MYSQL_PASSWORD: telamo_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: telamonet_phpmyadmin
+    environment:
+      PMA_HOST: db  # Nombre del servicio MySQL
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 128M
+    ports:
+      - "8080:80"  # Accede en http://localhost:8080
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  mysql_data:

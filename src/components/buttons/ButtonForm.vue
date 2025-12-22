@@ -17,8 +17,8 @@
         margin: 0 auto;
         text-shadow: -1px 1px 1px black;
         transition: .2s ease-in-out;
-        background: -webkit-linear-gradient(305deg, #1b1b1b,#ff3838,#1b1b1b);/* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(305deg, #1b1b1b,#ff3838,#1b1b1b);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: -webkit-linear-gradient(140deg, #326465,#1d2e3e);/* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(140deg, #326465,#1d2e3e);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
 
     .submit-button:hover {
