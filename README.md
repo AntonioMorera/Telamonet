@@ -6,7 +6,7 @@ El proyecto está inspirado en plataformas como Instagram y Twitter, pero desarr
 Su objetivo principal es funcionar como un entorno realista donde practicar autenticación, feeds dinámicos, perfiles de usuario, publicación de contenido e interacción social basada en likes y comentarios.
 
 <p align="center">
-  <img width="135" height="124" alt="TelamoNet_logo" src="https://github.com/user-attachments/assets/logo/logoTelamon.png" />
+  <img src="src/assets/logo/logoTelamon.png" alt="TelamoNet_logo" width="135" height="124"/>
 </p>
 
 ---
