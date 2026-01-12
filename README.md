@@ -1,4 +1,4 @@
-# 🌀 TELAMONET
+# 🦈 TELAMONET
 
 TelamoNet es una simulación de una red social moderna, creada con el propósito de aprender y dominar el stack full-JavaScript.  
 El proyecto está inspirado en plataformas como Instagram y Twitter, pero desarrollado a una escala pequeña, enfocada en la interacción entre amigos y familiares.
@@ -6,7 +6,7 @@ El proyecto está inspirado en plataformas como Instagram y Twitter, pero desarr
 Su objetivo principal es funcionar como un entorno realista donde practicar autenticación, feeds dinámicos, perfiles de usuario, publicación de contenido e interacción social basada en likes y comentarios.
 
 <p align="center">
-  <img src="src/assets/logo/logoTelamon.png" alt="TelamoNet_logo" width="135" height="124"/>
+  <img src="src/assets/logo/logoTelamon.png" alt="TelamoNet_logo" width="135" height="135"/>
 </p>
 
 ---
@@ -21,40 +21,23 @@ TelamoNet está construido completamente con tecnologías JavaScript modernas:
 - **Vue Router** — Sistema de rutas para las vistas.
 
 ### 🗄️ Backend / Base de Datos
-- **Supabase**  
-  - Base de datos: PostgreSQL  
-  - Autenticación  
-  - API automática  
-  - Storage para imágenes  
+- **MySQL**
+  - Base de datos: MySQL
+  - Autenticación
+  - Storage para imágenes
 
+-**Docker**
 ---
 
 ## 🧩 Propósito de TelamoNet
 
 El proyecto **TelamoNet** no pretende competir con ninguna red real, sino servir como un proyecto educativo para profundizar en:
 
-- Arquitectura cliente → servicio cloud  
-- Consumo de APIs  
 - Modelado de bases de datos  
 - Componentes y estados globales  
 - Seguridad y validación  
 - UI/UX responsiva  
 - Buenas prácticas en Vue 3
-
----
-
-## 📁 Estructura del proyecto
-
-src/
-main.js
-supabase.js
-router/
-stores/
-views/
-components/
-assets/
-utils/
-styles/
 
 ---
 
@@ -64,11 +47,6 @@ El proyecto evoluciona constantemente conforme se implementan nuevas funcionalid
 
 ---
 
-## 🤝 Contribución
-Actualmente se trata de un proyecto personal de aprendizaje, pero cualquier sugerencia o idea es bienvenida mediante issues o comentarios.
-
----
-
-## ✨ Autor
-**Daniel Bucaloiu Morales**  
-Proyecto personal para aprender y mejorar como desarrollador fullstack JavaScript.
+## ✨ Autores
+**Daniel Bucaloiu Morales, Jason Camila Sotto y Antonio Morera**  
+Proyecto para aprender y mejorar como desarrolladores fullstack JavaScript.
