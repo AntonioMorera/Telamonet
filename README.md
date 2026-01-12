@@ -1,19 +1,19 @@
-# 🌀 BucaFeed
+# 🌀 TELAMONET
 
-BucaFeed es una simulación de una red social moderna, creada con el propósito de aprender y dominar el stack full-JavaScript.  
+TelamoNet es una simulación de una red social moderna, creada con el propósito de aprender y dominar el stack full-JavaScript.  
 El proyecto está inspirado en plataformas como Instagram y Twitter, pero desarrollado a una escala pequeña, enfocada en la interacción entre amigos y familiares.
 
 Su objetivo principal es funcionar como un entorno realista donde practicar autenticación, feeds dinámicos, perfiles de usuario, publicación de contenido e interacción social basada en likes y comentarios.
 
 <p align="center">
-  <img width="135" height="124" alt="Bucafeed_logo" src="https://github.com/user-attachments/assets/14caa934-07f0-4545-a50e-cce5fded67fc" />
+  <img width="135" height="124" alt="TelamoNet_logo" src="https://github.com/user-attachments/assets/14caa934-07f0-4545-a50e-cce5fded67fc" />
 </p>
 
 ---
 
 ## 🚀 Tecnologías utilizadas
 
-BucaFeed está construido completamente con tecnologías JavaScript modernas:
+TelamoNet está construido completamente con tecnologías JavaScript modernas:
 
 ### 🖥️ Frontend
 - **Vue 3** — Framework principal de la interfaz.
@@ -29,9 +29,9 @@ BucaFeed está construido completamente con tecnologías JavaScript modernas:
 
 ---
 
-## 🧩 Propósito de BucaFeed
+## 🧩 Propósito de TelamoNet
 
-El proyecto **BucaFeed** no pretende competir con ninguna red real, sino servir como un proyecto educativo para profundizar en:
+El proyecto **TelamoNet** no pretende competir con ninguna red real, sino servir como un proyecto educativo para profundizar en:
 
 - Arquitectura cliente → servicio cloud  
 - Consumo de APIs  
