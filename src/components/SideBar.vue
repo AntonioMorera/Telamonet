@@ -38,11 +38,11 @@ const tendencias = [
 </script>
 
 <template>
-  <aside class="w-80 h-screen sticky top-0 overflow-y-auto border-l border-[#2a4a5a] p-5 font-sans">
+  <aside class="w-[280px] sm:w-[300px] h-screen sticky top-0 overflow-y-auto border-l border-[#2a4a5a] p-4 sm:p-5 font-sans">
     
     <!-- Sugerencias de cuentas -->
-    <div class="mb-5">
-      <h3 class="font-extrabold text-lg text-white mb-4">
+    <div class="mb-4 sm:mb-5">
+      <h3 class="font-extrabold text-base sm:text-lg text-white mb-3 sm:mb-4 tracking-wide">
         {{ t.sidebar.accountSuggestions }}
       </h3>
       
@@ -52,20 +52,20 @@ const tendencias = [
         class="flex items-center py-2 px-2 mr-2 rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200"
       >
         <!-- Avatar -->
-        <div class="mr-3">
+        <div class="mr-2 sm:mr-3">
           <img 
             :src="sugerencia.avatar" 
             :alt="sugerencia.nombre" 
-            class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white shadow-sm"
           >
         </div>
         
         <!-- Información -->
         <div class="flex-1 flex flex-col min-w-0">
-          <span class="font-bold text-sm truncate text-white">
+          <span class="font-bold text-xs sm:text-sm truncate text-white">
             {{ sugerencia.nombre }}
           </span>
-          <span class="text-xs text-[#a0c4d4] truncate">
+          <span class="text-[11px] sm:text-xs text-[#a0c4d4] truncate">
             {{ sugerencia.usuario }}
           </span>
         </div>
@@ -76,11 +76,11 @@ const tendencias = [
     </div>
 
     <!-- Separador -->
-    <hr class="border-none h-px bg-white my-5">
+    <hr class="border-none h-px bg-white my-4 sm:my-5">
 
     <!-- Tendencias -->
-    <div class="mb-5">
-      <h3 class="font-extrabold text-lg text-white mb-4">
+    <div class="mb-4 sm:mb-5">
+      <h3 class="font-extrabold text-base sm:text-lg text-white mb-3 sm:mb-4 tracking-wide">
         {{ t.sidebar.trending }}
       </h3>
       
@@ -89,49 +89,49 @@ const tendencias = [
         :key="index" 
         class="py-2 px-2 mr-2 border-b border-[#4b7b94] last:border-none rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200 cursor-pointer"
       >
-        <span class="block font-bold text-sm text-white mb-0.5">
+        <span class="block font-bold text-xs sm:text-sm text-white mb-0.5">
           {{ tendencia.hashtag }}
         </span>
-        <span class="text-xs text-[#a0c4d4]">
+        <span class="text-[11px] sm:text-xs text-[#a0c4d4]">
           {{ tendencia.tweets }}
         </span>
       </div>
       
-      <a href="#" class="block mt-2.5 text-[#4db8ff] text-sm px-2 hover:text-[#80d4ff] hover:underline transition-colors duration-200">
+      <a href="#" class="block mt-2.5 text-[#4db8ff] text-xs sm:text-sm px-2 hover:text-[#80d4ff] hover:underline transition-colors duration-200">
         Ver más
       </a>
     </div>
 
     <!-- Separador -->
-    <hr class="border-none h-px bg-white my-5">
+    <hr class="border-none h-px bg-white my-4 sm:my-5">
 
     <!-- Videos -->
-    <div class="mb-5">
+    <div class="mb-4 sm:mb-5">
       <!-- Videos que te gustaron -->
-      <div class="flex items-center py-3 px-2.5 mr-2 rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200 cursor-pointer">
+      <div class="flex items-center py-2.5 sm:py-3 px-2.5 mr-2 rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200 cursor-pointer">
         <!-- Icono a la izquierda -->
-        <div class="mr-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-heart text-[#a0c4d4]">
+        <div class="mr-2 sm:mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sm:w-6 sm:h-6 icon icon-tabler icons-tabler-outline icon-tabler-heart text-[#a0c4d4]">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/>
           </svg>
         </div>
-        <span class="text-sm text-white font-medium">
+        <span class="text-xs sm:text-sm text-white font-medium">
           {{ t.sidebar.likedVideos }}
         </span>
       </div>
       
       <!-- Videos guardados -->
-      <div class="flex items-center py-3 px-2.5 mr-2 rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200 cursor-pointer">
+      <div class="flex items-center py-2.5 sm:py-3 px-2.5 mr-2 rounded-lg hover:bg-[#2a4a5a] transition-colors duration-200 cursor-pointer">
         <!-- Icono a la izquierda -->
-        <div class="mr-3">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#a0c4d4]">
+        <div class="mr-2 sm:mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sm:w-6 sm:h-6 text-[#a0c4d4]">
             <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2"/>
             <circle cx="12" cy="14" r="2"/>
             <path d="M14 4v4h-8v-4"/>
           </svg>
         </div>
-        <span class="text-sm text-white font-medium">
+        <span class="text-xs sm:text-sm text-white font-medium">
           {{ t.sidebar.savedVideos }}
         </span>
       </div>
