@@ -31,7 +31,7 @@ const tendencias = [
   { hashtag: 'Reto viral Antena3'                      , tweets: '252K Tweets' },
   { hashtag: '¿Se tiene que venir llorado de casa?'    , tweets: '142K Tweets' },
   { hashtag: '¿Como se imprime un certificado digital?', tweets: '52K Tweets' },
-  { hashtag: '¿Se puede ser bueno en todo?'            , tweets: '22K Tweets' },
+  { hashtag: '¿Se puede ser bueno en todo?'            , tweets: '22M Tweets' },
   { hashtag: 'Zero, ¿Heroe o villano?'                 , tweets: '12K Tweets' },
   { hashtag: 'Forager'                                 , tweets: '8K Tweets' }
 ]
