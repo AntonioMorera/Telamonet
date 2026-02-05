@@ -20,15 +20,15 @@ const sugerencias = [
   },
     { 
     id: 3, 
-    nombre: 'Mikaela', 
-    usuario: '@Mamaluigi',
+    nombre: 'Michael', 
+    usuario: '@MichaelMihail',
     avatar: 'https://static.vecteezy.com/system/resources/previews/024/983/914/non_2x/simple-user-default-icon-free-png.png'
   }
 ]
 
 // Datos de ejemplo para tendencias
 const tendencias = [
-  { hashtag: '¿Luigi es homo?'                         , tweets: '252K Tweets' },
+  { hashtag: 'Reto viral Antena3'                         , tweets: '252K Tweets' },
   { hashtag: '¿Se tiene que venir llorado de casa?'    , tweets: '142K Tweets' },
   { hashtag: '¿Como se imprime un certificado digital?', tweets: '52K Tweets' },
   { hashtag: 'CodeGeass'                               , tweets: '22K Tweets' },
