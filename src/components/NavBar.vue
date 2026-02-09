@@ -1,22 +1,43 @@
 <!--Componente de barra de navegacion-->
 <script setup>
-    import { onMounted } from 'vue'
-    import { users } from '../data/users/users';
+    import { onMounted, ref } from 'vue'
 
     import { useTranslations } from '../composables/useTranslations'
     const { t } = useTranslations() //Variable para llamar al archivo de traduccion
 
+    const dbStatus = ref('loading') // loading, connected, error
+
+    const checkDbConnection = async () => {
+        try {
+            const response = await fetch('http://localhost:8000/api/test-connection')
+            const data = await response.json()
+            if (data.status === 'success' && data.database.includes('correctamente')) {
+                dbStatus.value = 'connected'
+            } else {
+                dbStatus.value = 'error'
+            }
+        } catch (error) {
+            dbStatus.value = 'error'
+        }
+    }
+
     onMounted(() => {
+        checkDbConnection()
+
         let dots = document.getElementById("dots");
         let dotsPopup = document.getElementById("dots-popup");
 
-        dots.addEventListener("click", function() {
-            dotsPopup.classList.toggle("active");
-        });
+        if (dots && dotsPopup) {
+            dots.addEventListener("click", function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                dotsPopup.classList.toggle("active");
+            });
 
-        document.addEventListener("click", function() {
-            dotsPopup.classList.remove("active");
-        })
+            document.addEventListener("click", function() {
+                dotsPopup.classList.remove("active");
+            });
+        }
     });
 </script>
 
@@ -26,18 +47,62 @@
             <img class="w-[65px] h-[70px]" src="/src/assets/logo/logoTelamon.png" alt="">
             <h1 class="font-bold text-[20px] text-white">{{ t.nav.title }}<span class="text-[#a0c4d4]">{{ t.nav.website }}</span></h1>
         </div>
-        <router-link class="link" to="/home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>{{ t.nav.home }}</router-link>
-        <router-link class="link" to="/explore"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>{{ t.nav.explore }}</router-link>
-        <router-link class="link" to="/question"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-question-mark"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" /><path d="M12 19l0 .01" /></svg>{{ t.nav.question }}</router-link>
-        <router-link class="link" to="/notification"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>{{ t.nav.notification }}</router-link>
-        <router-link class="link" to="/event"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-event"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>{{ t.nav.event }}</router-link>
-        <router-link class="link" id="post" to="/post"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-circle-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M9 12h6" /><path d="M12 9v6" /></svg>{{ t.nav.post }}</router-link>
-        <router-link class="link" id="profile" to="/profile"><img src="../assets/logo/logoTelamon.png" alt="" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">{{ t.nav.profile }}<svg id="dots" @click.stop.prevent="toggleDotsPopup" class="rounded-xl hover:bg-[#43768f] transition-colors duration-200 cursor-pointer | icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg></router-link>
-                                                                  <!--   PROVISIONAL   -->
-        <div id="dots-popup" class="relative bottom-[935px]">
-            <div class="absolute right-[40px] top-[720px] bg-[#1d2b38] rounded-xl">
-                <router-link class="user-options" to="/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M16 19h6" /><path d="M19 16v6" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4" /></svg>{{ t.nav.addAccount }}</router-link>
-                <router-link id="logout" class="user-options" to="/login"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-logout-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M15 12h-12l3 -3" /><path d="M6 15l-3 -3" /></svg>{{ t.nav.logout }}</router-link>
+        
+        <router-link class="link" to="/home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+            {{ t.nav.home }}
+        </router-link>
+
+        <router-link class="link" to="/explore">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+            {{ t.nav.explore }}
+        </router-link>
+
+        <router-link class="link" to="/question">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-question-mark"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 8a3.5 3 0 0 1 3.5 -3h1a3.5 3 0 0 1 3.5 3a3 3 0 0 1 -2 3a3 4 0 0 0 -2 4" /><path d="M12 19l0 .01" /></svg>
+            {{ t.nav.question }}
+        </router-link>
+
+        <router-link class="link" to="/notification">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
+            {{ t.nav.notification }}
+        </router-link>
+        
+        <router-link class="link" to="/laravel">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-database"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>
+            Prueba Laravel
+            <span v-if="dbStatus === 'connected'" class="ml-auto w-3 h-3 bg-green-500 rounded-full" title="Conectado a DB"></span>
+            <span v-else-if="dbStatus === 'error'" class="ml-auto w-3 h-3 bg-red-500 rounded-full" title="Error de conexión"></span>
+            <span v-else class="ml-auto w-3 h-3 bg-yellow-500 rounded-full animate-pulse" title="Cargando..."></span>
+        </router-link>
+
+        <router-link class="link" to="/event">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-event"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
+            {{ t.nav.event }}
+        </router-link>
+
+        <router-link class="link" id="post" to="/post">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-circle-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M9 12h6" /><path d="M12 9v6" /></svg>
+            {{ t.nav.post }}
+        </router-link>
+
+        <div class="link mt-auto" id="profile">
+            <img src="../assets/logo/logoTelamon.png" alt="" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
+            {{ t.nav.profile }}
+            <svg id="dots" class="ml-auto rounded-xl hover:bg-[#43768f] transition-colors duration-200 cursor-pointer icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
+        </div>
+
+        <!-- Popup de opciones -->
+        <div id="dots-popup" class="relative bottom-[100px]">
+            <div class="absolute right-[40px] bottom-0 bg-[#1d2b38] rounded-xl shadow-xl border border-gray-700 min-w-[180px]">
+                <router-link class="user-options" to="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M16 19h6" /><path d="M19 16v6" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4" /></svg>
+                    {{ t.nav.addAccount }}
+                </router-link>
+                <router-link id="logout" class="user-options" to="/login">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-logout-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M15 12h-12l3 -3" /><path d="M6 15l-3 -3" /></svg>
+                    {{ t.nav.logout }}
+                </router-link>
             </div>
         </div>                                                          
     </nav>
@@ -52,7 +117,7 @@
         margin-top: 20px;
         padding-left: 40px;
         min-height: 90vh;
-        z-index: 1;
+        z-index: 10;
     }
 
     .link {
@@ -103,12 +168,6 @@
         color: white;
     }
 
-    .user-options.router-link-active {
-        background-color: #2a4a5a;
-        color: white;
-        font-weight: 600;
-    }
-
     #post {
         display: flex;
         background-color: #2a4a5a;
@@ -123,22 +182,17 @@
 
     #post:hover {
         background-color: #3a5a6a;
-        color: white;
     }
 
     #profile {
-        position: relative;
         margin-top: auto;
-        margin-bottom: 20px;
+        cursor: default;
     }
 
     #dots {
-        position: absolute;
-        right: 16px;
         width: 24px;
         height: 24px;
         stroke: currentColor;
-        z-index: 10;
     }
 
     #dots-popup {
@@ -146,6 +200,7 @@
         transform: translateY(5px);
         pointer-events: none;
         transition: opacity 200ms ease, transform 200ms ease;
+        z-index: 50;
     }
 
     #dots-popup.active {
