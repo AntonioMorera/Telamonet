@@ -9,12 +9,12 @@ const { t } = useTranslations()
 
 // Datos de ejemplo
 const usuario = {
-   nombre: 'Jugi Quijugi',
-   usuarioNombre: '@jugiquijugi',
+   nombre: 'TelamoNet',
+   usuarioNombre: '@telamonet',
    seguidores: 100,
    siguiendo: 75,
-   bannerUrl: 'https://www.retrones.net/sites/default/files/cabeceras/cabeceras_36.jpg',
-   iconoUrl: 'https://www.pro-bems.com/IMAGES/images_1/FIGDC95442/m/FIGDC95442_1.jpg'
+   bannerUrl: 'https://estaticos-cdn.prensaiberica.es/clip/3bffd319-f839-4e57-9ccb-b95ec474f104_source-aspect-ratio_default_0.jpg',
+   iconoUrl: '../assets/logo/logoTelamon.png'
 }
 </script>
 
@@ -29,7 +29,7 @@ const usuario = {
         <SearchBar />
             </div>
 
-            <section class="text-white flex-1">
+            <section class="bg-[#15202b80] text-white flex-1">
 
             <div class="relative">
         
@@ -38,7 +38,7 @@ const usuario = {
                 </div>
                 
 
-                <img :src="usuario.iconoUrl" alt="icono" class="icono absolute w-[100px] h-[100px] rounded-full border-4 border-[#15202b] bg-[#15202b] object-cover bottom-[-50px] left-5 shadow-lg"/>
+                <img src="../assets/logo/logoTelamon.png" alt="icono" class="icono absolute w-[100px] h-[100px] rounded-full border-4 border-[#15202b] bg-[#15202b] object-cover bottom-[-50px] left-5 shadow-lg"/>
             </div>
 
             <!-- Botón de editar perfil -->

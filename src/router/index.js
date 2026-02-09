@@ -3,10 +3,10 @@ import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import ProfileView from "../views/ProfileView.vue";
 import RegisterView from "../views/RegisterView.vue";
-import TrendingView from "../views/TrendingView.vue";
+import QuestionView from "../views/QuestionView.vue";
 import ExploreView from "../views/ExploreView.vue";
 import NotificationView from "../views/NotificationView.vue";
-import MesaggeView from "../views/MesaggeView.vue";
+import EventView from "../views/EventView.vue";
 import PostView from "../views/PostView.vue";
 
 const router = createRouter({
@@ -33,9 +33,9 @@ const router = createRouter({
           component: ProfileView
         },
         {
-          path: '/trending',
-          name: 'trending',
-          component: TrendingView
+          path: '/question',
+          name: 'question',
+          component: QuestionView
         },
         {
           path: '/explore',
@@ -48,9 +48,9 @@ const router = createRouter({
           component: NotificationView
         },
         {
-          path: '/mesagge',
-          name: 'mesagge',
-          component: MesaggeView
+          path: '/event',
+          name: 'event',
+          component: EventView
         },
         {
           path: '/post',

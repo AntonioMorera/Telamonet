@@ -74,7 +74,7 @@
         <NavBar></NavBar>
         <section class="text-white">
             <SearchBar></SearchBar>
-            <div id="mainBody">
+            <div id="mainPost" class="min-h-[92.9vh] bg-[#15202b80]">
                 <form class="flex flex-col mt-5 ml-10 gap-3">
                     <label for="post-title" id="post-title" class="text-3xl font-bold">{{ t.post.title }}</label>
                     <input type="text" id="post-title-input" autocomplete="off" class="input-text" maxlength="30">

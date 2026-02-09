@@ -12,8 +12,8 @@
         <NavBar></NavBar>
         <section class="text-white">
             <SearchBar></SearchBar>
-            <div id="mainMesagge" class="flex justify-center items-center min-h-[80vh]">
-                <h1 class="text-4xl font-bold">No hay ningun mensaje</h1>
+            <div id="mainMesagge" class="flex justify-center items-center min-h-[92.9vh] bg-[#15202b80]">
+                <h1 class="text-4xl font-bold">No hay ningun evento</h1>
             </div>
         </section>
     </main>

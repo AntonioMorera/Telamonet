@@ -12,7 +12,7 @@
         <NavBar></NavBar>
         <section class="text-white">
             <SearchBar></SearchBar>
-            <div id="mainExplore" class="flex justify-center items-center min-h-[80vh]">
+            <div id="mainExplore" class="flex justify-center items-center min-h-[92.9vh] bg-[#15202b80]">
                 <h1 class="text-4xl font-bold">No hay nada que buscar</h1>
             </div>
 
