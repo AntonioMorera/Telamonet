@@ -9,88 +9,86 @@ const { t } = useTranslations()
 
 // Datos de ejemplo
 const usuario = {
-   nombre: 'Jugi Quijugi',
-   usuarioNombre: '@jugiquijugi',
+   nombre: 'TelamoNet',
+   usuarioNombre: '@telamonet',
    seguidores: 100,
    siguiendo: 75,
-   bannerUrl: 'https://www.retrones.net/sites/default/files/cabeceras/cabeceras_36.jpg',
-   iconoUrl: 'https://www.pro-bems.com/IMAGES/images_1/FIGDC95442/m/FIGDC95442_1.jpg'
+   bannerUrl: 'https://estaticos-cdn.prensaiberica.es/clip/3bffd319-f839-4e57-9ccb-b95ec474f104_source-aspect-ratio_default_0.jpg',
+   iconoUrl: '../assets/logo/logoTelamon.png'
 }
 </script>
 
 <template>
-  <main class="flex flex-row justify-center min-h-screen">
+    <main class="flex flex-row justify-center min-h-screen">
     <NavBar />
 
     <!-- Sección central: Perfil -->
-    <div class="w-[600px] flex flex-col">
+    <div class="w-[1200px] flex flex-col">
 
-      <div class="sticky top-0 z-10">
+        <div class="sticky top-0 z-10">
         <SearchBar />
-      </div>
+            </div>
 
-      <section class="border-x border-[#2a4a5a] bg-[#15202b] text-white flex-1">
+            <section class="bg-[#15202b80] text-white flex-1">
 
-        <div class="relative">
-   
-          <div class="banner">
-            <img :src="usuario.bannerUrl" alt="banner" class="w-full h-[200px] object-cover" />
-          </div>
-          
+            <div class="relative">
+        
+                <div class="banner">
+                <img :src="usuario.bannerUrl" alt="banner" class="w-full h-[300px] object-cover" />
+                </div>
+                
 
-          <img :src="usuario.iconoUrl" alt="icono" class="icono absolute w-[100px] h-[100px] rounded-full border-4 border-[#15202b] bg-[#15202b] object-cover bottom-[-50px] left-5 shadow-lg"/>
+                <img src="../assets/logo/logoTelamon.png" alt="icono" class="icono absolute w-[100px] h-[100px] rounded-full border-4 border-[#15202b] bg-[#15202b] object-cover bottom-[-50px] left-5 shadow-lg"/>
+            </div>
+
+            <!-- Botón de editar perfil -->
+            <div class="flex justify-end items-center p-4 mt-0">
+                <ButtonTemplate 
+                :texto="t.profile.editprofile"
+                :accion="() => console.log('editar perfil')" 
+                />
+            </div>
+
+            <!-- Información del perfil -->
+            <div class="px-5 pb-2.5 -mt-2">
+                <h2 class="nombre text-2xl font-bold m-0 text-[#e7e9ea]">
+                {{ usuario.nombre }}
+                </h2>
+                <p class="nombre-usuario text-[#8b98a5] text-base my-0.5 mx-0">
+                {{ usuario.usuarioNombre }}
+                </p>
+                <p class="seguidores text-[#8b98a5] text-sm mt-2">
+                <span class="numero font-bold text-[#e7e9ea]">
+                    {{ usuario.seguidores }}
+                </span> 
+                {{ t.profile.followers }} · 
+                <span class="numero font-bold text-[#e7e9ea]">
+                    {{ usuario.siguiendo }}
+                </span> 
+                {{ t.profile.following }}
+                </p>
+            </div>
+
+            <!-- Pestañas -->
+            <div class="pestanas flex justify-around border-t border-b border-[#2a4a5a] py-2.5 mt-2">
+                <span class="cursor-pointer px-3 py-2 rounded transition-colors hover:bg-[#1e2936] text-[#8b98a5]">
+                {{ t.profile.posts }}
+                </span>
+                <span class="cursor-pointer px-3 py-2 rounded transition-colors hover:bg-[#1e2936] text-[#8b98a5]">
+                {{ t.profile.photos }}
+                </span>
+                <span class="cursor-pointer px-3 py-2 rounded transition-colors hover:bg-[#1e2936] text-[#8b98a5]">
+                {{ t.profile.likes }}
+                </span>
+            </div>
+
+            <!-- Contenido de publicaciones -->
+            <div class="publicaciones px-5 py-2.5">
+                <p class="text-[#8b98a5]">{{ t.profile.userContent }}</p>
+            </div>
+            </section>
         </div>
-
-        <!-- Botón de editar perfil -->
-        <div class="flex justify-end items-center p-4 mt-0">
-          <ButtonTemplate 
-            :texto="t.profile.editprofile"
-            :accion="() => console.log('editar perfil')" 
-          />
-        </div>
-
-        <!-- Información del perfil -->
-        <div class="px-5 pb-2.5 -mt-2">
-          <h2 class="nombre text-2xl font-bold m-0 text-[#e7e9ea]">
-            {{ usuario.nombre }}
-          </h2>
-          <p class="nombre-usuario text-[#8b98a5] text-base my-0.5 mx-0">
-            {{ usuario.usuarioNombre }}
-          </p>
-          <p class="seguidores text-[#8b98a5] text-sm mt-2">
-            <span class="numero font-bold text-[#e7e9ea]">
-              {{ usuario.seguidores }}
-            </span> 
-            {{ t.profile.followers }} · 
-            <span class="numero font-bold text-[#e7e9ea]">
-              {{ usuario.siguiendo }}
-            </span> 
-            {{ t.profile.following }}
-          </p>
-        </div>
-
-        <!-- Pestañas -->
-        <div class="pestanas flex justify-around border-t border-b border-[#2a4a5a] py-2.5 mt-2">
-          <span class="cursor-pointer px-3 py-2 rounded transition-colors hover:bg-[#1e2936] text-[#8b98a5]">
-            {{ t.profile.posts }}
-          </span>
-          <span class="cursor-pointer px-3 py-2 rounded transition-colors hover:bg-[#1e2936] text-[#8b98a5]">
-            {{ t.profile.photos }}
-          </span>
-          <span class="cursor-pointer px-3 py-2 rounded transition-colors hover:bg-[#1e2936] text-[#8b98a5]">
-            {{ t.profile.likes }}
-          </span>
-        </div>
-
-        <!-- Contenido de publicaciones -->
-        <div class="publicaciones px-5 py-2.5">
-          <p class="text-[#8b98a5]">{{ t.profile.userContent }}</p>
-        </div>
-      </section>
-    </div>
-
-    <SideBar />
-  </main>
+    </main>
 </template>
 
 <style scoped>

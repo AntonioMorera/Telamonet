@@ -10,14 +10,12 @@
 <template>
     <main>
         <NavBar></NavBar>
-        <section class="bg-[#15202b] text-white">
+        <section class="text-white">
             <SearchBar></SearchBar>
-            <div id="mainNotification">
-                <p>MESAGGES</p>
+            <div id="mainMesagge" class="flex justify-center items-center min-h-[92.9vh] bg-[#15202b80]">
+                <h1 class="text-4xl font-bold">No hay ningun evento</h1>
             </div>
-
         </section>
-        <SideBar></SideBar>
     </main>
 </template>
 
@@ -30,11 +28,6 @@
     }
 
     section {
-        border: 1px solid black;
-        width: 600px;
-    }
-
-    section:last-child {
-        width: 300px;
+        width: 1200px;
     }
 </style>

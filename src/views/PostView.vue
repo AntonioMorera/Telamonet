@@ -72,9 +72,9 @@
 <template>
     <main>
         <NavBar></NavBar>
-        <section class="bg-[#15202b] text-white">
+        <section class="text-white">
             <SearchBar></SearchBar>
-            <div id="mainBody">
+            <div id="mainPost" class="min-h-[92.9vh] bg-[#15202b80]">
                 <form class="flex flex-col mt-5 ml-10 gap-3">
                     <label for="post-title" id="post-title" class="text-3xl font-bold">{{ t.post.title }}</label>
                     <input type="text" id="post-title-input" autocomplete="off" class="input-text" maxlength="30">
@@ -97,7 +97,6 @@
                 </form>
             </div>
         </section>
-        <SideBar></SideBar>
     </main>
 </template>
 
@@ -131,11 +130,6 @@
     }
 
     section {
-        border: 1px solid black;
-        width: 600px;
-    }
-
-    section:last-child {
-        width: 300px;
+        width: 1200px;
     }
 </style>
