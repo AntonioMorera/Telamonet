@@ -21,7 +21,7 @@ TelamoNet está construido completamente con tecnologías JavaScript modernas:
 - **Vue Router** — Sistema de rutas para las vistas.
 
 ### 🗄️ Backend / Base de Datos
-- **MySQL**
+- **Larvel**
   - Base de datos: MySQL
   - Autenticación
   - Storage para imágenes
