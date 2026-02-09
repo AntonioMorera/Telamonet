@@ -8,6 +8,7 @@ import ExploreView from "../views/ExploreView.vue";
 import NotificationView from "../views/NotificationView.vue";
 import EventView from "../views/EventView.vue";
 import PostView from "../views/PostView.vue";
+import LaravelTestView from "../views/LaravelTestView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +57,11 @@ const router = createRouter({
           path: '/post',
           name: 'post',
           component: PostView
+        },
+        {
+          path: '/laravel',
+          name: 'laravel',
+          component: LaravelTestView
         }
     ]
 })
