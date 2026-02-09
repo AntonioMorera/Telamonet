@@ -13,6 +13,10 @@
         dots.addEventListener("click", function() {
             dotsPopup.classList.toggle("active");
         });
+
+        document.addEventListener("click", function() {
+            dotsPopup.classList.remove("active");
+        })
     });
 </script>
 
