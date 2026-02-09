@@ -1,0 +1,17 @@
+
+🚀 Tecnologías utilizadas
+🖥️ Frontend
+Vue 3 — Framework principal de la interfaz.
+Vite — Entorno de desarrollo rápido.
+Vue Router — Sistema de rutas para las vistas.
+🗄️ Backend / Base de Datos
+Laravel
+
+Base de datos: MySQL
+Autenticación de usuarios
+Gestión de roles
+Storage para imágenes
+Docker — Entorno de desarrollo y despliegue.
+
+tengo que hacer un proyecto con lo que te mencione de arriba, me falta la parte de Laravel, haz que el proyecto tenga laravel, actualiza el docker, para que descargue tambien laravel, 
+y añade aqui abajo, este mismo prompt pero mejor redactado para reutilizarlo en otro proyecto
