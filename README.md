@@ -104,5 +104,5 @@ El proyecto evoluciona progresivamente conforme se implementan nuevas funcionali
 ---
 
 ## ✨ Autores
-**Daniel Bucaloiu Morales, Jason Camila Sotto y Antonio Morera**  
+**Daniel Bucaloiu Morales, Jason Camila Sotto y Antonio Morera Marrero**  
 Proyecto educativo orientado al aprendizaje y mejora continua como desarrolladores fullstack.
