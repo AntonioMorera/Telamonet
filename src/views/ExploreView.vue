@@ -10,14 +10,13 @@
 <template>
     <main>
         <NavBar></NavBar>
-        <section class="bg-[#15202b] text-white">
+        <section class="text-white">
             <SearchBar></SearchBar>
-            <div id="mainExplore">
-                <p>EXPLORE</p>
+            <div id="mainExplore" class="flex justify-center items-center min-h-[80vh]">
+                <h1 class="text-4xl font-bold">No hay nada que buscar</h1>
             </div>
 
         </section>
-        <SideBar></SideBar>
     </main>
 </template>
 
@@ -30,11 +29,6 @@
     }
 
     section {
-        border: 1px solid black;
-        width: 600px;
-    }
-
-    section:last-child {
-        width: 300px;
+        width: 1200px;
     }
 </style>

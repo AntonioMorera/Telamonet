@@ -72,7 +72,7 @@
 <template>
     <main>
         <NavBar></NavBar>
-        <section class="bg-[#15202b] text-white">
+        <section class="text-white">
             <SearchBar></SearchBar>
             <div id="mainBody">
                 <form class="flex flex-col mt-5 ml-10 gap-3">
@@ -97,7 +97,6 @@
                 </form>
             </div>
         </section>
-        <SideBar></SideBar>
     </main>
 </template>
 
@@ -131,11 +130,6 @@
     }
 
     section {
-        border: 1px solid black;
-        width: 600px;
-    }
-
-    section:last-child {
-        width: 300px;
+        width: 1200px;
     }
 </style>

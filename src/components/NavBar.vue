@@ -17,7 +17,7 @@
 </script>
 
 <template>
-    <nav class="bg-gradient-to-b from-[#326465] to-[#1d2e3e]">
+    <nav class="">
         <div class="flex flex-row items-center gap-3 mb-4">
             <img class="w-[65px] h-[70px]" src="/src/assets/logo/logoTelamon.png" alt="">
             <h1 class="font-bold text-[20px] text-white">{{ t.nav.title }}<span class="text-[#a0c4d4]">{{ t.nav.website }}</span></h1>
