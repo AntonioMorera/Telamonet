@@ -143,6 +143,7 @@
     .link:hover {
         background-color: #2a4a5a;
         color: white;
+        cursor: pointer;
     }
 
     .link.router-link-active {
