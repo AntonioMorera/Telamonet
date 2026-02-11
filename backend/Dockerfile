@@ -8,7 +8,10 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip \
-    unzip
+    unzip \
+    nodejs \
+    npm
+
 
 # Limpiar caché
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -25,6 +28,10 @@ WORKDIR /var/www
 # Copiar el script de entrada y dar permisos
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Copiar la configuración de PHP-FPM para que escuche en 0.0.0.0
+COPY zz-docker.conf /etc/php/8.2/fpm/pool.d/zz-docker.conf
+
 
 # Exponer el puerto para php-fpm
 EXPOSE 9000

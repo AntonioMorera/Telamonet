@@ -17,5 +17,9 @@ php artisan install:api --no-interaction
 php artisan config:cache
 php artisan route:cache
 
+# Instalar dependencias de Node.js y construir assets
+npm install
+npm run build
+
 # Iniciar PHP-FPM
 php-fpm
