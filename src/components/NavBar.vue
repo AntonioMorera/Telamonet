@@ -5,6 +5,7 @@
     import { useTranslations } from '../composables/useTranslations'
     const { t } = useTranslations() //Variable para llamar al archivo de traduccion
     import PostFormModal from '../components/PostFormModal.vue';
+    import TranslateSelectorHome from '../components/TranslateSelectorHome.vue';
 
     const dbStatus = ref('loading') // loading, connected, error
 
@@ -55,7 +56,7 @@
 </script>
 
 <template>
-    <nav class="">
+    <nav class="" id="principalNav">
         <div class="flex flex-row items-center gap-3 mb-4">
             <img class="w-[65px] h-[70px]" src="/src/assets/logo/logoTelamon.png" alt="">
             <h1 class="font-bold text-[20px] text-white">{{ t.nav.title }}<span class="text-[#a0c4d4]">{{ t.nav.website }}</span></h1>
@@ -104,7 +105,9 @@
         </button>
 
         <PostFormModal v-if="showPostModal" @close="showPostModal = false"/>
-        
+
+        <TranslateSelectorHome/>
+                    
         <router-link class="link" id="profile" to="/profile">
             <img src="../assets/logo/logoTelamon.png" alt="" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
             {{ t.nav.profile }}
@@ -121,7 +124,7 @@
 </template>
 
 <style scoped>
-    nav {
+    #principalNav {
         position: relative;
         width: 300px;
         display: flex;
