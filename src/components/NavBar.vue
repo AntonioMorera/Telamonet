@@ -4,6 +4,7 @@
 
     import { useTranslations } from '../composables/useTranslations'
     const { t } = useTranslations() //Variable para llamar al archivo de traduccion
+    import PostFormModal from '../components/PostFormModal.vue';
 
     const dbStatus = ref('loading') // loading, connected, error
 
@@ -23,6 +24,12 @@
 
     const returnToView = () => {
         window.location.href = 'http://localhost:8000/prueba'
+    }
+
+    const showPostModal = ref(false)
+
+    const togglePostModal = () => {
+        showPostModal.value = !showPostModal.value
     }
 
     onMounted(() => {
@@ -82,7 +89,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-database"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>
             Prueba Laravel
             <span v-if="dbStatus === 'connected'" class="ml-auto w-3 h-3 bg-green-500 rounded-full" title="Conectado a DB"></span>
-            <span v-else-if="dbStatus === 'error'" class="ml-auto w-3 h-3 bg-red-500 rounded-full" title="Error de conexión"></span>
+            <span v-else-if="dbStatus === 'error'" class="ml-auto w-3 h-3 bg-red-500 rounded-full" title="Error de conexiÃ³n"></span>
             <span v-else class="ml-auto w-3 h-3 bg-yellow-500 rounded-full animate-pulse" title="Cargando..."></span>
         </router-link>
         
@@ -91,10 +98,12 @@
             {{ t.nav.event }}
         </router-link>
         
-        <router-link class="link" id="post" to="/post">
+        <button class="link" id="post" @click="togglePostModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-circle-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M9 12h6" /><path d="M12 9v6" /></svg>
             {{ t.nav.post }}
-        </router-link>
+        </button>
+
+        <PostFormModal v-if="showPostModal" @close="showPostModal = false"/>
         
         <router-link class="link" id="profile" to="/profile">
             <img src="../assets/logo/logoTelamon.png" alt="" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
