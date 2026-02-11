@@ -1,0 +1,81 @@
+services:
+  # Frontend + Nginx
+  - type: web
+    name: telamonet-frontend
+    env: docker
+    dockerfilePath: ./Dockerfile.prod
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: PORT
+        value: 80
+
+  # Backend Laravel API
+  - type: web
+    name: telamonet-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile.prod
+    dockerContext: ./backend
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DB_HOST
+        value: telamonet-db  # Nombre del servicio MySQL
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: telamonet
+      - key: DB_USERNAME
+        value: telamo_user
+      - key: DB_PASSWORD
+        fromService:
+          name: telamonet-db
+          type: web
+          envVarKey: MYSQL_PASSWORD
+
+  # 👇 BASE DE DATOS COMO WEB SERVICE (NO private service)
+  - type: web
+    name: telamonet-db
+    env: docker
+    repo: https://github.com/tu-usuario/tu-repo.git
+    dockerfilePath: ./Dockerfile.mysql
+    plan: free
+    healthCheckPath: /  # Necesario para web services
+    disk:
+      name: mysql-data
+      mountPath: /var/lib/mysql
+      sizeGB: 1
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true
+      - key: MYSQL_DATABASE
+        value: telamonet
+      - key: MYSQL_USER
+        value: telamo_user
+      - key: MYSQL_PASSWORD
+        generateValue: true
+
+  # phpMyAdmin
+  - type: web
+    name: telamonet-phpmyadmin
+    env: docker
+    repo: https://github.com/phpmyadmin/docker.git
+    branch: master
+    plan: free
+    envVars:
+      - key: PMA_HOST
+        value: telamonet-db  # Mismo nombre del servicio MySQL
+      - key: PMA_PORT
+        value: 3306
+      - key: PMA_USER
+        value: telamo_user
+      - key: PMA_PASSWORD
+        fromService:
+          name: telamonet-db
+          type: web
+          envVarKey: MYSQL_PASSWORD
+      - key: UPLOAD_LIMIT
+        value: 300M
+      - key: PMA_ARBITRARY
+        value: "1"

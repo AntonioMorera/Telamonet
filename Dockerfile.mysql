@@ -1,0 +1,10 @@
+FROM mysql:8.0
+
+# EXPOSE no es obligatorio pero ayuda a la documentación
+EXPOSE 3306
+
+# Configura MySQL para aceptar conexiones externas
+RUN echo "bind-address = 0.0.0.0" >> /etc/mysql/conf.d/docker.cnf
+
+# Comando por defecto
+CMD ["mysqld"]
