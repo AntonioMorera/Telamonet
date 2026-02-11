@@ -70,11 +70,6 @@
             {{ t.nav.explore }}
         </router-link>
         
-        <router-link class="link" to="/question">
-            <img src="../assets/question-icon.svg" width="28" height="28" alt="" class="w-7 h-7 invert brightness-0">
-            {{ t.nav.question }}
-        </router-link>
-        
         <router-link class="link" to="/notification">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-bell"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" /><path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
             {{ t.nav.notification }}
@@ -91,6 +86,11 @@
             <span v-if="dbStatus === 'connected'" class="ml-auto w-3 h-3 bg-green-500 rounded-full" title="Conectado a DB"></span>
             <span v-else-if="dbStatus === 'error'" class="ml-auto w-3 h-3 bg-red-500 rounded-full" title="Error de conexiÃ³n"></span>
             <span v-else class="ml-auto w-3 h-3 bg-yellow-500 rounded-full animate-pulse" title="Cargando..."></span>
+        </router-link>
+
+        <router-link class="link" to="/question">
+            <img src="../assets/question-icon.svg" width="28" height="28" alt="" class="w-7 h-7 invert brightness-0">
+            {{ t.nav.question }}
         </router-link>
         
         <router-link class="link" to="/event">
