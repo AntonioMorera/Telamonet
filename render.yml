@@ -1,27 +1,22 @@
 services:
-  # Frontend + Nginx
+  # ========== SERVICIO ÚNICO: Laravel + Vue ==========
   - type: web
-    name: telamonet-frontend
-    env: docker
-    dockerfilePath: ./Dockerfile.prod
-    dockerContext: .
-    plan: free
-    envVars:
-      - key: PORT
-        value: 80
-
-  # Backend Laravel API
-  - type: web
-    name: telamonet-backend
+    name: telamonet-app
     env: docker
     dockerfilePath: ./backend/Dockerfile.prod
-    dockerContext: ./backend
+    dockerContext: .
     plan: free
     envVars:
       - key: APP_ENV
         value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://telamonet-app.onrender.com
+      - key: DB_CONNECTION
+        value: mysql
       - key: DB_HOST
-        value: telamonet-db  # Nombre del servicio MySQL
+        value: telamonet-db
       - key: DB_PORT
         value: 3306
       - key: DB_DATABASE
@@ -33,15 +28,18 @@ services:
           name: telamonet-db
           type: web
           envVarKey: MYSQL_PASSWORD
+    disk:
+      name: laravel-storage
+      mountPath: /var/www/html/storage
+      sizeGB: 1
 
-  # 👇 BASE DE DATOS COMO WEB SERVICE (NO private service)
+  # ========== BASE DE DATOS ==========
   - type: web
     name: telamonet-db
     env: docker
-    repo: https://github.com/tu-usuario/tu-repo.git
     dockerfilePath: ./Dockerfile.mysql
+    dockerContext: .
     plan: free
-    healthCheckPath: /  # Necesario para web services
     disk:
       name: mysql-data
       mountPath: /var/lib/mysql
@@ -56,7 +54,7 @@ services:
       - key: MYSQL_PASSWORD
         generateValue: true
 
-  # phpMyAdmin
+  # ========== PHPMYADMIN ==========
   - type: web
     name: telamonet-phpmyadmin
     env: docker
@@ -65,7 +63,7 @@ services:
     plan: free
     envVars:
       - key: PMA_HOST
-        value: telamonet-db  # Mismo nombre del servicio MySQL
+        value: telamonet-db
       - key: PMA_PORT
         value: 3306
       - key: PMA_USER

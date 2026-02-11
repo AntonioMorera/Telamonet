@@ -5,7 +5,7 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: './backend/public/frontend',
+    outDir: './backend/public/frontend',  // ✅ Esto es clave para Opción 1
     emptyOutDir: true,
   },
   server: {
