@@ -5,26 +5,14 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: './backend/public/frontend',  // ✅ Esto es clave para Opción 1
+    outDir: './backend/public/frontend',  // ✅ Importante
     emptyOutDir: true,
   },
-  server: {
-    host: '0.0.0.0',
-    port: 5173,
-    watch: {
-      usePolling: true
-    }
-  },
+  // ELIMINA o COMENTA la sección server para producción
+  // server: { ... },  // ❌ NO necesaria en producción
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@import "@/styles/variables.scss";'
-      }
     }
   }
 })
