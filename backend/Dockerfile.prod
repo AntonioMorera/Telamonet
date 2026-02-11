@@ -30,27 +30,40 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
 WORKDIR /var/www/html
 
-# Copiar backend
+# ========== CONSTRUIR VUE ==========
+# Copiar solo lo necesario para construir Vue
+COPY package*.json ./
+COPY vite.config.js ./
+COPY index.html ./
+COPY src/ ./src/
+COPY public/ ./public/
+
+# Instalar dependencias y CONSTRUIR Vue
+RUN npm ci --only=production || npm install --only=production
+RUN npm run build
+
+# ========== COPIAR BACKEND ==========
+# Copiar el resto de Laravel (NO SOBREESCRIBE public/frontend)
 COPY . .
 
-# Copiar frontend y construir dentro de public/frontend
-COPY ../package*.json ./
-COPY ../vite.config.js ./
-COPY ../index.html ./
-COPY ../src/ ./src/
-COPY ../public/ ./public/
-
-# Instalar dependencias y construir Vue DENTRO de Laravel
-RUN npm install
-RUN npm run build  # Esto construirá en public/frontend según tu vite.config.js
-
-# Instalar dependencias de Laravel
+# ========== INSTALAR LARAVEL ==========
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
 # Permisos
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html/storage \
     && chmod -R 755 /var/www/html/bootstrap/cache
+
+# ========== ELIMINAR VITE COMPLETAMENTE ==========
+RUN rm -rf node_modules \
+    && rm -f package*.json \
+    && rm -f vite.config.js \
+    && rm -rf src/ \
+    && rm -f index.html \
+    && rm -f .env.example \
+    && rm -f .gitignore \
+    && rm -rf tests/ \
+    && rm -rf .github/
 
 # Optimizar Laravel
 RUN php artisan config:cache \

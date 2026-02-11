@@ -5,11 +5,11 @@ import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: './backend/public/frontend',  // ✅ Importante
+    outDir: './backend/public/frontend',
     emptyOutDir: true,
   },
-  // ELIMINA o COMENTA la sección server para producción
-  // server: { ... },  // ❌ NO necesaria en producción
+  // ⚠️ ELIMINA COMPLETAMENTE LA SECCIÓN 'server' ⚠️
+  // No debe tener server.host, server.port, server.watch, etc.
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
