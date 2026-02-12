@@ -12,10 +12,10 @@
         <h1 class="text-6xl mb-[70px] text-white [text-shadow:-3px_3px_1px_black]">{{ t.login.title }}</h1>
         <div class="flex justify-center items-center mb-[150px]" id="form-container">
             <form class="flex flex-col justify-center h-[400px] w-[400px] p-[10px] pl-[20px] pr-[20px] bg-white rounded-bl-xl rounded-tl-xl" method="post">
-                <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.login.username }}</label>
-                <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.login.placeholderUsername" required>
-                <label for="password-register-form" id="password-register-label">{{ t.login.password }}</label>
-                <input type="password" class="input-form" maxlength="20" id="password-register-form" name="password-register-form" :placeholder="t.login.placeholderPassword" required>
+                <label class="mt-[60px] font-bold" for="username-register-form" id="username-register-label">{{ t.login.username }}</label>
+                <input type="text" class="outline-none border-0 border-b-[1px] border-black mb-[30px] p-0.5 text-[20px]" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.login.placeholderUsername" required>
+                <label class="font-bold" for="password-register-form" id="password-register-label">{{ t.login.password }}</label>
+                <input type="password" class="outline-none border-0 border-b-[1px] border-black mb-[30px] p-0.5 text-[20px]" maxlength="20" id="password-register-form" name="password-register-form" :placeholder="t.login.placeholderPassword" required>
 
                 <RouterLink to="/home" class="text-center">
                     <ButtonForm :value="t.login.submit"></ButtonForm>
@@ -33,12 +33,13 @@
 </template>
 
 <style scoped>
+
     #side-panel {
         background: -webkit-linear-gradient(140deg, #326465,#1d2e3e);/* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(140deg, #326465,#1d2e3e);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         /* box-shadow: 10px 10px 1px white; */
     }
-
+    /*
     label {
         font-weight: bold;
         margin-bottom: 10px;
@@ -52,4 +53,5 @@
         padding: 2px;
         font-size: 20px;
     }
+    */
 </style>
