@@ -70,25 +70,25 @@
 </script>
 
 <template>
-    <main>
+    <main class="flex justify-center min-h-[100vh]">
         <NavBar></NavBar>
-        <section class="text-white">
+        <section class="text-white w-[1200px]">
             <SearchBar></SearchBar>
             <div id="mainPost" class="min-h-[92.9vh] bg-[#15202b80]">
                 <form class="flex flex-col mt-5 ml-10 gap-3">
                     <label for="post-title" id="post-title" class="text-3xl font-bold">{{ t.post.title }}</label>
-                    <input type="text" id="post-title-input" autocomplete="off" class="input-text" maxlength="30">
+                    <input type="text" id="post-title-input" autocomplete="off" class="bg-[#1d2c3b] text-[25px] w-[510px] rounded-[8px] pl-[10px] hover:bg-[#223446] focus-within:outline-[1px] focus-within:outline-[#1da1f2]" maxlength="30">
 
                     <label for="post-image" id="post-image" class="text-3xl font-bold">{{ t.post.image }}</label>
 
                     <label for="file-upload" id="label-upload" class="relative flex justify-center items-center rounded-lg bg-[#1d2c3b] w-[510px] h-[90px] hover:cursor-pointer hover:bg-[#223446]">
                         <span id="plus-icon" class="rounded-lg bg-white/30"><svg class="text-gray-300 | icon icon-tabler icons-tabler-outline icon-tabler-plus" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg></span>
                         <input type="file" accept="image/*" id="file-upload" class="hidden">
-                        <img id="image-preview" class="max-w-[510px] max-h-[300px] rounded-lg">
+                        <img id="image-preview" class="block max-w-[510px] max-h-[300px] rounded-lg">
                     </label>
 
                     <label for="post-description" id="post-description" class="text-3xl font-bold">{{ t.post.description }}</label>
-                    <textarea id="post-description-input" class="input-text h-[150px] resize-none" maxlength="200"></textarea>
+                    <textarea id="post-description-input" class="bg-[#1d2c3b] text-[25px] w-[510px] rounded-[8px] pl-[10px] hover:bg-[#223446] focus-within:outline-[1px] focus-within:outline-[#1da1f2] h-[150px] resize-none" maxlength="200"></textarea>
 
                     <div class="flex justify-end">
                         <!--ENVIAR DATOS A /HomeView.vue-->
@@ -101,7 +101,7 @@
 </template>
 
 <style scoped>
-
+/*
     #image-preview {
         display: none;
     }
@@ -132,4 +132,5 @@
     section {
         width: 1200px;
     }
+*/
 </style>
