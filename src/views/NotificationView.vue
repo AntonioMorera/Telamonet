@@ -21,16 +21,5 @@
 </template>
 
 <style scoped>
-/*
-    main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        min-height: 100vh;
-    }
 
-    section {
-        width: 1200px;
-    }
-*/
 </style>

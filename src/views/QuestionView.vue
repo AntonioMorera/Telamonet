@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <main class="flex justify-center min-h-[100vh]">
+    <main class="flex justify-center min-h-screen">
         <NavBar></NavBar>
         <section class="text-white w-[1200px]">
             <SearchBar></SearchBar>
@@ -20,16 +20,5 @@
 </template>
 
 <style scoped>
-    /*
-    main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        min-height: 100vh;
-    }
-    
-    section {
-        width: 1200px;
-    }
-    */
+
 </style>
