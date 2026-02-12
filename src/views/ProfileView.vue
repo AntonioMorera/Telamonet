@@ -35,7 +35,7 @@ const usuario = {
                     <div class="banner">
                         <img :src="usuario.bannerUrl" alt="banner" class="w-full h-[300px] object-cover" />
                     </div>
-                    <img src="../assets/logo/logoTelamon.png" alt="icono" class="icono absolute w-[100px] h-[100px] rounded-full border-4 border-[#15202b] bg-[#15202b] object-cover bottom-[-50px] left-5 shadow-lg"/>
+                    <img src="../assets/logo/logoTelamon.png" alt="icono" class="icono absolute w-[100px] h-[100px] rounded-full border-4 border-[#15202b] bg-[#15202b] object-cover bottom-[-50px] left-5 shadow-xl"/>
                 </div>
 
                 <!-- Botón de editar perfil -->
@@ -75,13 +75,5 @@ const usuario = {
 </template>
 
 <style scoped>
-    .icono {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
 
-    .pestanas span.activa {
-    font-weight: bold;
-    color: #1da1f2;
-    border-bottom: 3px solid #1da1f2;
-    }
 </style>
