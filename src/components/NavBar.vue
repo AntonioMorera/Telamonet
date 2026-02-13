@@ -73,17 +73,11 @@
             <span v-else class="ml-auto w-3 h-3 bg-yellow-500 rounded-full animate-pulse" title="Cargando..."></span>
         </a>
 
-        <NavBarLinks to="/question" :title=t.nav.question>
-            <img src="../assets/question-icon.svg" width="28" height="28" alt="" class="w-7 h-7 invert brightness-0">
-        </NavBarLinks>
         
         <NavBarLinks to="/event" :title=t.nav.event>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-event"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
         </NavBarLinks>
 
-        <router-link class="relative flex items-center gap-2.5 mb-5 mr-4 mt-auto rounded-xl text-[17px] font-medium py-3 px-4 text-white no-underline transition-all duration-200 ease-in-out hover:bg-[#2a4a5a] hover:cursor-pointer active:bg-[#2a4a5a] active:font-bold" to="/laravel">
-            Prueba Laravel
-        </router-link>
                     
         <router-link class="relative flex items-center gap-2.5 mb-5 mr-4 mt-auto rounded-xl text-[17px] font-medium py-3 px-4 text-white no-underline transition-all duration-200 ease-in-out hover:bg-[#2a4a5a] hover:cursor-pointer active:bg-[#2a4a5a] active:font-bold" id="profile" to="/profile">
             <img src="../assets/logo/logoTelamon.png" alt="" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm">
