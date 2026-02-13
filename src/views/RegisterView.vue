@@ -12,17 +12,36 @@
         const nextButton = document.getElementById('nextButton');
         const allRolesForm = document.getElementById('allRolesForm');
         const studentForm = document.getElementById('studentForm');
+        const EIForm = document.getElementById('EIForm');
+        const selectRole = document.getElementById('selectRole');
+        const registerButton = document.getElementById('registerButton');
+        const forms = document.getElementById('forms');
 
         registerForm.addEventListener('click', function(e){
             e.preventDefault()
         });
 
         nextButton.addEventListener('click', function() {
-            allRolesForm.classList.remove('flex');
-            studentForm.classList.remove('hidden');
-            studentForm.classList.remove('flex');
+            if (selectRole.value === "EI") {
+                allRolesForm.classList.remove('flex');
+                allRolesForm.classList.add('hidden');
+                EIForm.classList.remove('hidden');
+                EIForm.classList.add('flex');
+                registerButton.classList.remove('hidden');
+                registerButton.classList.add('flex');
+                nextButton.classList.add('hidden');
+            } else if (selectRole.value === "Student") {
+                allRolesForm.classList.remove('flex');
+                allRolesForm.classList.add('hidden');
+                studentForm.classList.remove('hidden');
+                studentForm.classList.add('flex');
+                nextButton.id = "button1";
+                if (nextButton.id === "button1") {
+                    studentForm.classList.remove('hidden');
+                    studentForm.classList.add('flex');
+                }
+            }
         });
-
     });
 </script>
 
@@ -37,11 +56,12 @@
                 <p class="text-center text-[20px] font-bold mt-[30px] [text-shadow:-2px_2px_1px_black]" id="eslogan">{{ t.register.eslogan }}{{ t.nav.website }}</p>
             </div>
             <form id="registerForm" class="relative flex flex-col justify-center h-[400px] w-[400px] p-[10px] pl-[20px] pr-[20px] bg-white rounded-br-xl rounded-tr-xl" method="post">
-                <section id="allRolesForm" class="flex flex-col mb-32">
-                    <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.register.username }}</label>
-                    <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required>
+                
+                <section id="allRolesForm" class="forms flex flex-col mb-32">
+                    <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.register.email }}</label>
+                    <input type="text" class="input-form" maxlength="50" autocomplete id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required>
                     <label for="password-register-form" id="password-register-label">{{ t.register.password }}</label>
-                    <input type="password" class="input-form" maxlength="20" id="password-register-form" name="password-register-form" :placeholder="t.register.placeholderPassword" required>
+                    <input type="password" class="input-form" maxlength="20" autocomplete id="password-register-form" name="password-register-form" :placeholder="t.register.placeholderPassword" required>
                     <select name="selectRole" id="selectRole">
                         <option value="EI">Institución Educativa</option>
                         <option value="Student">Estudiante</option>
@@ -49,16 +69,16 @@
                     </select>
                 </section>
 
-                <section id="studentForm" class=" flex-col mb-20 hidden">
+                <section id="studentForm" class="forms flex-col mb-20 hidden">
                     <label for="student-name" id="studentName">Nombre</label>
-                    <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>
+                    <input type="text" class="input-form" maxlength="50" autocomplete id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>
                     <label for="student-name" id="studentName">Apellidos</label>
-                    <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>
+                    <input type="text" class="input-form" maxlength="50" autocomplete id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>
                     <label for="student-name" id="studentName">DNI/NIE</label>
-                    <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>                    
+                    <input type="text" class="input-form" maxlength="50" autocomplete id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>                    
                 </section>
 
-                <section id="EIForm" class=" flex-col mb-20 hidden">
+                <section id="EIForm" class="forms flex-col mb-20 hidden">
                     <label for="choose-center" id="chooseCenter">Nivel de Enseñanza</label>
                     <select name="" id="" class="">
                         <option value="PE">Educación Primaria</option>
@@ -71,7 +91,7 @@
                         <option value="">Saldran todo de la base de datos</option>
                     </select>
 
-                    <RouterLink to="/home" class="absolute bottom-[80px] right-12 text-center hidden">
+                    <RouterLink to="/home" id="registerButton" class="absolute bottom-[80px] right-12 text-center hidden">
                         <ButtonForm :value="t.register.submit"></ButtonForm>
                     </RouterLink>
                 </section>
