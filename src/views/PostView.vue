@@ -72,9 +72,9 @@
 <template>
     <main class="flex justify-center min-h-[100vh]">
         <NavBar></NavBar>
-        <section class="text-white w-[1200px]">
+        <section class="bg-[#15202b] text-white">
             <SearchBar></SearchBar>
-            <div id="mainPost" class="min-h-[92.9vh] bg-[#15202b80]">
+            <div id="mainBody">
                 <form class="flex flex-col mt-5 ml-10 gap-3">
                     <label for="post-title" id="post-title" class="text-3xl font-bold">{{ t.post.title }}</label>
                     <input type="text" id="post-title-input" autocomplete="off" class="bg-[#1d2c3b] text-[25px] w-[510px] rounded-[8px] pl-[10px] hover:bg-[#223446] focus-within:outline-[1px] focus-within:outline-[#1da1f2]" maxlength="30">
@@ -99,38 +99,3 @@
         </section>
     </main>
 </template>
-
-<style scoped>
-/*
-    #image-preview {
-        display: none;
-    }
-
-    .input-text {
-        background-color: #1d2c3b;
-        font-size: 25px;
-        width: 510px;
-        border-radius: 8px;
-        padding-left: 10px;
-    }
-
-    .input-text:hover {
-        background-color: #223446;
-    }
-
-    .input-text:focus-within {
-        outline: 1px solid #1da1f2;
-    }
-
-    main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        min-height: 100vh;
-    }
-
-    section {
-        width: 1200px;
-    }
-*/
-</style>
