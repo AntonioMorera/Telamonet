@@ -1,7 +1,5 @@
 <!--Componente de barra de navegacion-->
 <script setup>
-    import PostFormModal from '../components/PostFormModal.vue';
-    import TranslateSelectorHome from '../components/TranslateSelectorHome.vue';
     import NavBarLinks from '../components/NavBarLinks.vue';
 
     import { onMounted, ref } from 'vue'
@@ -47,7 +45,7 @@
 </script>
 
 <template>
-    <nav class="relative w-[300px] flex flex-col mt-5 pl-10 min-h-[90vh] z-[1]" id="principalNav">
+    <nav class="relative w-[300px] flex flex-col pl-5 min-h-[90vh] z-[1]" id="principalNav">
         <div class="flex flex-row items-center gap-3 mb-4">
             <img class="w-[65px] h-[70px]" src="/src/assets/logo/logoTelamon.png" alt="">
             <h1 class="font-bold text-[20px] text-white">{{ t.nav.title }}<span class="text-[#a0c4d4]">{{ t.nav.website }}</span></h1>
@@ -107,5 +105,8 @@
 </template>
 
 <style scoped>
-
+    #principalNav {
+        background: linear-gradient(180deg, #1f5252 0%, #0f2828 100%);
+        box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.6);
+    }
 </style>
