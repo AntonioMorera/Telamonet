@@ -67,7 +67,7 @@
 
         <a class="relative flex items-center gap-[10px] mb-5 mr-4 rounded-xl text-[17px] font-[500] py-3 px-4 text-white no-underline transition-all duration-[0.2s] ease-in-out hover:bg-[#2a4a5a] hover:cursor-pointer active:bg-[#2a4a5a] active:font-bold" id="prueba">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" /></svg>
-            Prueba
+            Pruebaaaaaa
         </a>
 
         <NavBarLinks to="/question" :title=t.nav.question>

@@ -9,9 +9,10 @@ services:
       - "5173:5173"
     volumes:
       - .:/app
-      - /app/node_modules
+      - frontend_node_modules:/app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - WATCH_INTERVAL=500
     depends_on:
       - backend
 
@@ -22,6 +23,9 @@ services:
     container_name: telamonet_backend
     volumes:
       - ./backend:/var/www
+      - backend_vendor:/var/www/vendor
+      - backend_storage:/var/www/storage
+      - backend_bootstrap_cache:/var/www/bootstrap/cache
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
@@ -79,3 +83,7 @@ networks:
 
 volumes:
   mysql_data:
+  frontend_node_modules:
+  backend_vendor:
+  backend_storage:
+  backend_bootstrap_cache:
