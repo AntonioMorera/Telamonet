@@ -8,11 +8,21 @@
     import { onMounted, ref } from 'vue';
 
     onMounted(() => {
-        const form = document.getElementById("register-form");
+        const registerForm = document.getElementById('registerForm');
+        const nextButton = document.getElementById('nextButton');
+        const allRolesForm = document.getElementById('allRolesForm');
+        const studentForm = document.getElementById('studentForm');
 
-        form.addEventListener("click", function(event){
-            event.preventDefault()
+        registerForm.addEventListener('click', function(e){
+            e.preventDefault()
         });
+
+        nextButton.addEventListener('click', function() {
+            allRolesForm.classList.remove('flex');
+            studentForm.classList.remove('hidden');
+            studentForm.classList.remove('flex');
+        });
+
     });
 </script>
 
@@ -26,8 +36,8 @@
                 <img class="w-[90px] h-[100px]" src="/src/assets/logo/logoTelamon.png" alt="">
                 <p class="text-center text-[20px] font-bold mt-[30px] [text-shadow:-2px_2px_1px_black]" id="eslogan">{{ t.register.eslogan }}{{ t.nav.website }}</p>
             </div>
-            <form id="register-form" class="relative flex flex-col justify-center h-[400px] w-[400px] p-[10px] pl-[20px] pr-[20px] bg-white rounded-br-xl rounded-tr-xl" method="post">
-                <section class="flex flex-col mb-32 hidden">
+            <form id="registerForm" class="relative flex flex-col justify-center h-[400px] w-[400px] p-[10px] pl-[20px] pr-[20px] bg-white rounded-br-xl rounded-tr-xl" method="post">
+                <section id="allRolesForm" class="flex flex-col mb-32">
                     <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.register.username }}</label>
                     <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required>
                     <label for="password-register-form" id="password-register-label">{{ t.register.password }}</label>
@@ -39,7 +49,7 @@
                     </select>
                 </section>
 
-                <section id="studentForm" class="flex flex-col mb-20">
+                <section id="studentForm" class=" flex-col mb-20 hidden">
                     <label for="student-name" id="studentName">Nombre</label>
                     <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>
                     <label for="student-name" id="studentName">Apellidos</label>
@@ -48,7 +58,7 @@
                     <input type="text" class="input-form" maxlength="50" id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>                    
                 </section>
 
-                <section id="EIForm" class="flex flex-col mb-20 hidden">
+                <section id="EIForm" class=" flex-col mb-20 hidden">
                     <label for="choose-center" id="chooseCenter">Nivel de Enseñanza</label>
                     <select name="" id="" class="">
                         <option value="PE">Educación Primaria</option>
@@ -66,7 +76,7 @@
                     </RouterLink>
                 </section>
 
-                <button class="absolute bottom-[70px] right-[160px]">Siguiente</button>
+                <button id="nextButton" class="absolute bottom-[70px] right-[160px]">Siguiente</button>
 
                 <RouterLink to="/login" class="absolute bottom-[20px] right-16 flex justify-center items-center text-[15px] gap-1 text-[#4a4a4a] font-bold transition-all duration-200 ease-in-out hover:brightness-200" id="redirect-login">{{ t.register.haveAccount }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></RouterLink>
 
