@@ -8,9 +8,9 @@
 </script>
 
 <template>
-    <main>
+    <main class="flex justify-center min-h-[100vh]">
         <NavBar></NavBar>
-        <section class="text-white">
+        <section class="text-white w-[1200px]">
             <SearchBar></SearchBar>
             <div id="mainMesagge" class="flex justify-center items-center min-h-[92.9vh] bg-[#15202b80]">
                 <h1 class="text-4xl font-bold">No hay ningun evento</h1>
@@ -20,6 +20,7 @@
 </template>
 
 <style scoped>
+/*
     main {
         display: flex;
         flex-direction: row;
@@ -30,4 +31,5 @@
     section {
         width: 1200px;
     }
+*/
 </style>

@@ -43,9 +43,9 @@
 </script>
 
 <template>
-    <main>
+    <main class="flex justify-center min-h-screen">
         <NavBar></NavBar>
-        <section class="text-white">
+        <section class="text-white w-[1200px]">
             <SearchBar></SearchBar>
             <div id="mainBody" class="flex justify-center items-center min-h-[92.9vh] bg-[#15202b80]">
                 <h1 class="text-4xl font-bold">No hay publicaciones</h1>
@@ -56,14 +56,5 @@
 </template>
 
 <style scoped>
-    main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        min-height: 100vh;
-    }
 
-    section {
-        width: 1200px;
-    }
 </style>
