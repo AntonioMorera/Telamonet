@@ -163,7 +163,6 @@
         padding: 1.75rem;
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(10px);
     }
 
     .post-card:hover {
