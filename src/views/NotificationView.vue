@@ -8,7 +8,7 @@
 </script>
 
 <template>
-    <main class="flex min-h-[90vh] justify-between">
+    <main class="flex min-h-screen justify-between">
         <NavBar></NavBar>
         <section class="text-white w-[1500px] mr-14 mb-4">
             <!-- Filtro de notificaciones -->
