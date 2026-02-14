@@ -192,7 +192,6 @@
         padding: 20px;
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(10px);
     }
 
     .notification-card:hover {
