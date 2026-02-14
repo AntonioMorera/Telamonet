@@ -19,11 +19,11 @@ const usuario = {
 </script>
 
 <template>
-    <main class="flex flex-row justify-center min-h-screen">
+    <main class="flex flex-row justify-between min-h-screen">
         <NavBar />
 
         <!-- Sección central: Perfil -->
-        <div class="w-[1200px] flex flex-col">
+        <div class="w-[1580px] flex flex-col mr-4">
 
             <div class="sticky top-0 z-10">
                 <SearchBar />
