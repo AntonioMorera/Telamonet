@@ -11,11 +11,13 @@
         const registerForm = document.getElementById('registerForm');
         const nextButton = document.getElementById('nextButton');
         const allRolesForm = document.getElementById('allRolesForm');
-        const studentForm = document.getElementById('studentForm');
+        const studentForm = document.getElementById('studentTeacheEuForm');
         const EIForm = document.getElementById('EIForm');
         const selectRole = document.getElementById('selectRole');
         const registerButton = document.getElementById('registerButton');
         const forms = document.getElementById('forms');
+
+        let formPath = '';
 
         registerForm.addEventListener('click', function(e){
             e.preventDefault()
@@ -23,6 +25,7 @@
 
         nextButton.addEventListener('click', function() {
             if (selectRole.value === "EI") {
+                formPath = "EI";
                 allRolesForm.classList.remove('flex');
                 allRolesForm.classList.add('hidden');
                 EIForm.classList.remove('hidden');
@@ -31,6 +34,7 @@
                 registerButton.classList.add('flex');
                 nextButton.classList.add('hidden');
             } else if (selectRole.value === "Student") {
+                formPath = "Student";
                 allRolesForm.classList.remove('flex');
                 allRolesForm.classList.add('hidden');
                 studentForm.classList.remove('hidden');
@@ -40,6 +44,24 @@
                     studentForm.classList.remove('hidden');
                     studentForm.classList.add('flex');
                 }
+            } else if (selectRole.value === "Teacher") {
+                formPath = "Teacher";
+                allRolesForm.classList.remove('flex');
+                allRolesForm.classList.add('hidden');
+                studentForm.classList.remove('hidden');
+                studentForm.classList.add('flex');
+                nextButton.id = "button1";
+                if (nextButton.id === "button1") {
+                    studentForm.classList.remove('hidden');
+                    studentForm.classList.add('flex');
+                }
+            } else if (selectRole.value === "EU") {
+                formPath = "EU";
+                allRolesForm.classList.remove('flex');
+                allRolesForm.classList.add('hidden');
+                studentForm.classList.remove('hidden');
+                studentForm.classList.add('flex');
+                nextButton.id = "button1";
             }
         });
     });
@@ -65,11 +87,12 @@
                     <select name="selectRole" id="selectRole">
                         <option value="EI">Institución Educativa</option>
                         <option value="Student">Estudiante</option>
+                        <option value="Teacher">Profesor</option>
                         <option value="EU">Usuario Ajeno</option>
                     </select>
                 </section>
 
-                <section id="studentForm" class="forms flex-col mb-20 hidden">
+                <section id="studentTeacheEuForm" class="forms flex-col mb-20 hidden">
                     <label for="student-name" id="studentName">Nombre</label>
                     <input type="text" class="input-form" maxlength="50" autocomplete id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required></input>
                     <label for="student-name" id="studentName">Apellidos</label>
