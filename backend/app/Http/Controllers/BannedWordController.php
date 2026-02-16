@@ -28,3 +28,4 @@ class BannedWordController extends Controller
     }
 }
 
+

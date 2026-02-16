@@ -21,3 +21,4 @@ class BannedWord extends Model
 
 
 
+

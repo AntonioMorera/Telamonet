@@ -35,3 +35,4 @@ class EducationalCenter extends Model
 
 
 
+
