@@ -10,6 +10,6 @@ Route::get('/prueba', function () {
     return view('prueba');
 });
 
-Route::get('/users', function () {
-    return view('users');
-});
+use App\Http\Controllers\UserController;
+
+Route::get('/users', [UserController::class, 'index']);

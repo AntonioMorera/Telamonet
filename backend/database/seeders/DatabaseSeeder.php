@@ -5,10 +5,6 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
-
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -20,62 +16,62 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        try {
+            echo "🌱 Iniciando seeding de usuarios administradores...\n";
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+            // ADMINISTRADORES
+            $u1 = User::firstOrCreate(
+                ['email' => 'inge_tony@telamonet.com'],
+                [
+                    'name' => 'inge tony',
+                    'last_name' => 'Admin',
+                    'password' => Hash::make('mikaela123'),
+                    'role' => 'admin',
+                    'national_id' => 'ADM-001',
+                ]
+            );
+            echo "✅ Usuario 1 procesado: " . $u1->email . "\n";
 
-        // Usuario de prueba - teacher
-        User::factory()->create([
-            'name' => 'ProfesorPrueba',
-            'email' => 'profesor@prueba.com',
-            'password' => Hash::make('csas1234'),
-        ]);
+            $u2 = User::firstOrCreate(
+                ['email' => 'inge_json@telamonet.com'],
+                [
+                    'name' => 'inge json',
+                    'last_name' => 'Admin',
+                    'password' => Hash::make('luigi2005'),
+                    'role' => 'admin',
+                    'national_id' => 'ADM-002',
+                ]
+            );
+            echo "✅ Usuario 2 procesado: " . $u2->email . "\n";
+
+            $u3 = User::firstOrCreate(
+                ['email' => 'lidel_bucat@telamonet.com'],
+                [
+                    'name' => 'lidel buca',
+                    'last_name' => 'Admin',
+                    'password' => Hash::make('0000'),
+                    'role' => 'admin',
+                    'national_id' => 'ADM-003',
+                ]
+            );
+            echo "✅ Usuario 3 procesado: " . $u3->email . "\n";
+
+            echo "🏁 Seeding de usuarios completado correctamente.\n";
+
+        } catch (\Exception $e) {
+            echo "❌ Error fatal en DatabaseSeeder: " . $e->getMessage() . "\n";
+            echo "Trace: " . $e->getTraceAsString() . "\n";
+        }
         
-        // Usuario de prueba - student
-        User::factory()->create([
-            'name' => 'estudiantePrueba',
-            'email' => 'estudiante@prueba.com',
-            'password' => Hash::make('csas1234'),
-        ]);
-
-        // Usuario de prueba - externalUser
-        User::factory()->create([
-            'name' => 'UsuarioPrueba',
-            'email' => 'usuario@prueba.com',
-            'password' => Hash::make('csas1234'),
-        ]);
-
-
         // Roles de usuarios
-        $admin        = Role::create(['name' => 'admin']);
-        $teacher      = Role::create(['name' => 'teacher']);
-        $student      = Role::create(['name' => 'student']);
-        $externalUser = Role::create(['name' => 'externalUser']);
-
-        // Permisos de usuarios
-        $createMeeting = Permission::create(['name' => 'create meeting']);
-        $accessMeeting = Permission::create(['name' => 'access meeting']);
-        $modifyMeeting = Permission::create(['name' => 'modify meeting']);
-        $deleteMeeting = Permission::create(['name' => 'delete meeting']);
-
-        // Asignar roles a cada usuario
-        $admin->givePermissionTo($createMeeting, $accessMeeting, $modifyMeeting, $deleteMeeting);
-        $teacher->givePermissionTo($createMeeting, $accessMeeting, $modifyMeeting);
-        $student->givePermissionTo($accessMeeting);
-        $externalUser->givePermissionTo($accessMeeting);
-
-        $teacherTest = User::find(2); // Apunta al usuario de prueba - teacher
-        $teacherTest->assignrole('teacher');
-
-        
-        $studentTest = User::find(3); // Apunta al usuario de prueba - student
-        $studentTest->assignrole('student');
-
-        $externalUserTest = User::find(4); // Apunta al usuario de prueba - externalUser
-        $externalUserTest->assignrole('externalUser');
-
+        // $admin        = Role::create(['name' => 'admin']);
+        // $teacher      = Role::create(['name' => 'teacher']);
+        // $student      = Role::create(['name' => 'student']);
+        // $externalUser = Role::create(['name' => 'externalUser']);
     }
 }
+
+
+
+
+
