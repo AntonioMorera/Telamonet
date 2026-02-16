@@ -16,7 +16,7 @@
 
     const navigate = () => {
         if (props.backend) {
-            const backendBase = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8001'
+            const backendBase = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
             const cleanBase = backendBase.replace(/\/$/, '').replace(/\/frontend$/, '')
             window.location.href = `${cleanBase}/${props.to.replace(/^\//, '')}`
         }

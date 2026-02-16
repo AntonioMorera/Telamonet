@@ -16,16 +16,6 @@ services:
     depends_on:
       - backend
 
-  # Servidor de Señalización (Socket.io)
-  signaling:
-    image: node:20-alpine
-    container_name: telamonet_signaling
-    working_dir: /app
-    volumes:
-      - ./signaling:/app
-    ports:
-      - "3000:3000"
-    command: sh -c "npm install && node server.js"
 
   # Backend - Laravel
   backend:
@@ -37,6 +27,7 @@ services:
       - backend_vendor:/var/www/vendor
       - backend_storage:/var/www/storage
       - backend_bootstrap_cache:/var/www/bootstrap/cache
+      - ./backend/entrypoint.sh:/usr/local/bin/entrypoint.sh
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
@@ -73,6 +64,19 @@ services:
     networks:
       - app-network
 
+  # Servidor de Video Llamadas (Signaling)
+  signaling:
+    build:
+      context: ./signaling
+    container_name: telamonet_signaling
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./signaling:/app
+      - signaling_node_modules:/app/node_modules
+    networks:
+      - app-network
+
   # phpMyAdmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -98,3 +102,4 @@ volumes:
   backend_vendor:
   backend_storage:
   backend_bootstrap_cache:
+  signaling_node_modules:
