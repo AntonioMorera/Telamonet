@@ -11,7 +11,7 @@
         const registerForm = document.getElementById('registerForm');
         const nextButton = document.getElementById('nextButton');
         const allRolesForm = document.getElementById('allRolesForm');
-        const studentForm = document.getElementById('studentTeacheEuForm');
+        const studentTeacheEuForm = document.getElementById('studentTeacheEuForm');
         const EIForm = document.getElementById('EIForm');
         const selectRole = document.getElementById('selectRole');
         const registerButton = document.getElementById('registerButton');
@@ -20,12 +20,13 @@
         let formPath = '';
 
         registerForm.addEventListener('click', function(e){
-            e.preventDefault()
+            e.preventDefault();
         });
 
         nextButton.addEventListener('click', function() {
             if (selectRole.value === "EI") {
                 formPath = "EI";
+
                 allRolesForm.classList.remove('flex');
                 allRolesForm.classList.add('hidden');
                 EIForm.classList.remove('hidden');
@@ -33,34 +34,52 @@
                 registerButton.classList.remove('hidden');
                 registerButton.classList.add('flex');
                 nextButton.classList.add('hidden');
+
             } else if (selectRole.value === "Student") {
-                formPath = "Student";
+                formPath = "Student"; 
+
                 allRolesForm.classList.remove('flex');
                 allRolesForm.classList.add('hidden');
-                studentForm.classList.remove('hidden');
-                studentForm.classList.add('flex');
-                nextButton.id = "button1";
-                if (nextButton.id === "button1") {
-                    studentForm.classList.remove('hidden');
-                    studentForm.classList.add('flex');
+                studentTeacheEuForm.classList.remove('hidden');
+                studentTeacheEuForm.classList.add('flex');
+
+                if (nextButton.id === "studentButton") {
+                    studentTeacheEuForm.classList.add('hidden');
+                    studentTeacheEuForm.classList.remove('flex');
+                    EIForm.classList.remove('hidden');
+                    EIForm.classList.add('flex');
+                    registerButton.classList.remove('hidden');
+                    registerButton.classList.add('flex');
+                    nextButton.classList.add('hidden');
                 }
+                nextButton.id = "studentButton";
+
             } else if (selectRole.value === "Teacher") {
                 formPath = "Teacher";
+
                 allRolesForm.classList.remove('flex');
                 allRolesForm.classList.add('hidden');
-                studentForm.classList.remove('hidden');
-                studentForm.classList.add('flex');
-                nextButton.id = "button1";
-                if (nextButton.id === "button1") {
-                    studentForm.classList.remove('hidden');
-                    studentForm.classList.add('flex');
+                studentTeacheEuForm.classList.remove('hidden');
+                studentTeacheEuForm.classList.add('flex');
+
+                if (nextButton.id === "teacherButton") {
+                    studentTeacheEuForm.classList.add('hidden');
+                    studentTeacheEuForm.classList.remove('flex');
+                    EIForm.classList.remove('hidden');
+                    EIForm.classList.add('flex');
+                    registerButton.classList.remove('hidden');
+                    registerButton.classList.add('flex');
+                    nextButton.classList.add('hidden');
                 }
+                nextButton.id = "teacherButton";
+
             } else if (selectRole.value === "EU") {
                 formPath = "EU";
+
                 allRolesForm.classList.remove('flex');
                 allRolesForm.classList.add('hidden');
-                studentForm.classList.remove('hidden');
-                studentForm.classList.add('flex');
+                studentTeacheEuForm.classList.remove('hidden');
+                studentTeacheEuForm.classList.add('flex');
                 nextButton.id = "button1";
             }
         });
@@ -80,11 +99,13 @@
             <form id="registerForm" class="relative flex flex-col justify-center h-[400px] w-[400px] p-[10px] pl-[20px] pr-[20px] bg-white rounded-br-xl rounded-tr-xl" method="post">
                 
                 <section id="allRolesForm" class="forms flex flex-col mb-32">
-                    <label class="mt-[60px]" for="username-register-form" id="username-register-label">{{ t.register.email }}</label>
+                    <label class="mt-[30px] mb" for="username-register-form" id="username-register-label">{{ t.register.email }}</label>
+                    <span class=" text-xs">{{ t.register.emailSpan }}</span>
                     <input type="text" class="input-form" maxlength="50" autocomplete id="username-register-form" name="username-register-form" :placeholder="t.register.placeholderEmail" required>
                     <label for="password-register-form" id="password-register-label">{{ t.register.password }}</label>
                     <input type="password" class="input-form" maxlength="20" autocomplete id="password-register-form" name="password-register-form" :placeholder="t.register.placeholderPassword" required>
-                    <select name="selectRole" id="selectRole">
+                    <label for="who-register-form" id="who-register-label">¿Quién eres?</label>
+                    <select name="selectRole" id="selectRole" class="border-b border-black pb-1" required>
                         <option value="EI">Institución Educativa</option>
                         <option value="Student">Estudiante</option>
                         <option value="Teacher">Profesor</option>
@@ -119,7 +140,7 @@
                     </RouterLink>
                 </section>
 
-                <button id="nextButton" class="absolute bottom-[70px] right-[160px]">Siguiente</button>
+                <ButtonForm id="nextButton" value="Siguiente" class="absolute bottom-[60px] right-[50px] border rounded-lg"></ButtonForm>
 
                 <RouterLink to="/login" class="absolute bottom-[20px] right-16 flex justify-center items-center text-[15px] gap-1 text-[#4a4a4a] font-bold transition-all duration-200 ease-in-out hover:brightness-200" id="redirect-login">{{ t.register.haveAccount }}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></RouterLink>
 
@@ -136,7 +157,6 @@
 
     label {
         font-weight: bold;
-        margin-bottom: 10px;
     }
 
     .input-form {
