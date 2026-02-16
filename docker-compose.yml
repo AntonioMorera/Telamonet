@@ -16,6 +16,17 @@ services:
     depends_on:
       - backend
 
+  # Servidor de Señalización (Socket.io)
+  signaling:
+    image: node:20-alpine
+    container_name: telamonet_signaling
+    working_dir: /app
+    volumes:
+      - ./signaling:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && node server.js"
+
   # Backend - Laravel
   backend:
     build:

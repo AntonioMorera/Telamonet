@@ -4,6 +4,7 @@ import { login } from './login';
 import { sidebar } from './sidebar';
 import { profile } from './profile';
 import { post } from './post';
+import { videoCall } from './videoCall';
 
 export const en = {
     nav,
@@ -11,5 +12,6 @@ export const en = {
     login,
     sidebar,
     profile,
-    post
+    post,
+    videoCall
 };

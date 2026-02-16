@@ -8,6 +8,7 @@ export const nav = {
     notification: "Notificaciones",
     meeting: "Charlas",
     event: "Eventos",
+    videoCall: "Videollamada",
     post: "Crear",
     profile: "Perfil",
     addAccount: "Añadir Cuenta",

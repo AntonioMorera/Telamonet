@@ -1,6 +1,6 @@
 FROM php:8.2-fpm
 
-# Instalar dependencias del sistema
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -8,32 +8,26 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip \
-    unzip \
-    nodejs \
-    npm
+    unzip
 
-
-# Limpiar caché
+# Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Instalar extensiones de PHP
+# Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Obtener Composer
+# Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Configurar directorio de trabajo
+# Set working directory
 WORKDIR /var/www
 
-# Copiar el script de entrada y dar permisos
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+# Copy existing application directory contents
+COPY . /var/www
 
-# Copiar la configuración de PHP-FPM para que escuche en 0.0.0.0
-COPY zz-docker.conf /etc/php/8.2/fpm/pool.d/zz-docker.conf
+# Make entrypoint executable
+RUN chmod +x /var/www/entrypoint.sh
 
-
-# Exponer el puerto para php-fpm
+# Expose port 9000 and start php-fpm server
 EXPOSE 9000
-
-ENTRYPOINT ["entrypoint.sh"]
+CMD ["php-fpm"]

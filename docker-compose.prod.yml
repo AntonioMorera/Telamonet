@@ -21,6 +21,7 @@ services:
     restart: always
     volumes:
       - ./backend:/var/www
+    entrypoint: ["sh", "/var/www/entrypoint.sh"]
     environment:
       - APP_ENV=production
       - APP_DEBUG=false

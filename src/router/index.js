@@ -9,6 +9,7 @@ import NotificationView from "../views/NotificationView.vue";
 import EventView from "../views/EventView.vue";
 import MeetingView from "../views/MeetingView.vue";
 import LaravelTestView from "../views/LaravelTestView.vue";
+import VideoCallView from "../views/VideoCallView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,11 @@ const router = createRouter({
         path: '/',
         name: 'register',
         component: RegisterView
+        },
+        {
+        path: '/video-call',
+        name: 'video-call',
+        component: VideoCallView
         },
         {
         path: '/home',
