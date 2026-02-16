@@ -36,7 +36,7 @@
                 nextButton.classList.add('hidden');
 
             } else if (selectRole.value === "Student") {
-                formPath = "Student";
+                formPath = "Student"; 
 
                 allRolesForm.classList.remove('flex');
                 allRolesForm.classList.add('hidden');
