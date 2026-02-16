@@ -61,7 +61,7 @@
                 allRolesForm.classList.add('hidden');
                 studentForm.classList.remove('hidden');
                 studentForm.classList.add('flex');
-                nextButton.id = "button1";
+                nextButton.id = "button1"; 
             }
         });
     });
