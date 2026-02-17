@@ -1,0 +1,36 @@
+name: Auto sync fork with upstream
+
+# Se ejecuta cada 6 horas o manualmente desde GitHub
+on:
+  schedule:
+    - cron: '0 */6 * * *' # cada 6 horas
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clona tu fork
+      - name: Checkout fork
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      # Agrega el repo original como upstream
+      - name: Add upstream
+        run: |
+          git remote add upstream git@github.com:MedhoMs/bucafeed.git
+          git fetch upstream
+
+      # Resetea tu main para que sea idéntico al upstream
+      - name: Reset main to upstream
+        run: |
+          git checkout main
+          git reset --hard upstream/main
+
+      # Sube los cambios a tu fork
+      - name: Push changes
+        run: |
+          git push origin main --force
